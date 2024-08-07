@@ -100,23 +100,16 @@ namespace PlayerUI
         #region PlayListManagemetSubMenu
         private void button8_Click(object sender, EventArgs e)
         {
-            openChildForm(new RegistrarPedido());
+            openChildForm(new RegistrarProducto());
             //..
             //your codes
             //..
         }
 
-        private void button7_Click(object sender, EventArgs e)
-        {
-            openChildForm(new EstadisticaPedido());
-            //..
-            //your codes
-            //..
-        }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            openChildForm(new ConsultarPedido());
+            openChildForm(new ConsultarProductos());
             //..
             //your codes
             //..
@@ -223,11 +216,6 @@ namespace PlayerUI
             openChildForm(new ConsultarResul());
         }
 
-
-        private void button11_Click(object sender, EventArgs e)
-        {
-            openChildForm(new EliminarPedido());
-        }
 
         private void button18_Click(object sender, EventArgs e)
         {

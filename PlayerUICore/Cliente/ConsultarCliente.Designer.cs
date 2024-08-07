@@ -122,8 +122,9 @@
             dgvPaciente.RowHeadersWidth = 51;
             dgvPaciente.Size = new System.Drawing.Size(633, 357);
             dgvPaciente.TabIndex = 56;
+            dgvPaciente.CellContentClick += dgvPaciente_CellContentClick;
             // 
-            // ConsultarPaciente
+            // ConsultarCliente
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -137,7 +138,7 @@
             Controls.Add(btnExit);
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            Name = "ConsultarPaciente";
+            Name = "ConsultarCliente";
             Text = "ConsultarPaciente";
             Load += ConsultarPaciente_Load;
             ((System.ComponentModel.ISupportInitialize)dgvPaciente).EndInit();

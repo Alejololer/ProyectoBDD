@@ -51,6 +51,7 @@
             panelLogo = new System.Windows.Forms.Panel();
             panelChildForm = new System.Windows.Forms.Panel();
             pictureBox9 = new System.Windows.Forms.PictureBox();
+            button7 = new System.Windows.Forms.Button();
             panelSideMenu.SuspendLayout();
             panelEmpleadosSubMenu.SuspendLayout();
             panelFacturaciónSubMenu.SuspendLayout();
@@ -86,7 +87,7 @@
             panelEmpleadosSubMenu.Controls.Add(button9);
             panelEmpleadosSubMenu.Controls.Add(button5);
             panelEmpleadosSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
-            panelEmpleadosSubMenu.Location = new System.Drawing.Point(0, 567);
+            panelEmpleadosSubMenu.Location = new System.Drawing.Point(0, 605);
             panelEmpleadosSubMenu.Name = "panelEmpleadosSubMenu";
             panelEmpleadosSubMenu.Size = new System.Drawing.Size(233, 91);
             panelEmpleadosSubMenu.TabIndex = 25;
@@ -134,7 +135,7 @@
             button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             button1.ForeColor = System.Drawing.Color.Silver;
             button1.Image = (System.Drawing.Image)resources.GetObject("button1.Image");
-            button1.Location = new System.Drawing.Point(0, 522);
+            button1.Location = new System.Drawing.Point(0, 560);
             button1.Name = "button1";
             button1.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             button1.Size = new System.Drawing.Size(233, 45);
@@ -150,7 +151,7 @@
             panelFacturaciónSubMenu.Controls.Add(button36);
             panelFacturaciónSubMenu.Controls.Add(button37);
             panelFacturaciónSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
-            panelFacturaciónSubMenu.Location = new System.Drawing.Point(0, 437);
+            panelFacturaciónSubMenu.Location = new System.Drawing.Point(0, 475);
             panelFacturaciónSubMenu.Name = "panelFacturaciónSubMenu";
             panelFacturaciónSubMenu.Size = new System.Drawing.Size(233, 85);
             panelFacturaciónSubMenu.TabIndex = 19;
@@ -200,7 +201,7 @@
             btnParámetros.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             btnParámetros.ForeColor = System.Drawing.Color.Silver;
             btnParámetros.Image = (System.Drawing.Image)resources.GetObject("btnParámetros.Image");
-            btnParámetros.Location = new System.Drawing.Point(0, 392);
+            btnParámetros.Location = new System.Drawing.Point(0, 430);
             btnParámetros.Name = "btnParámetros";
             btnParámetros.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             btnParámetros.Size = new System.Drawing.Size(233, 45);
@@ -220,7 +221,7 @@
             btnExit.ForeColor = System.Drawing.Color.Silver;
             btnExit.Image = (System.Drawing.Image)resources.GetObject("btnExit.Image");
             btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            btnExit.Location = new System.Drawing.Point(0, 658);
+            btnExit.Location = new System.Drawing.Point(0, 696);
             btnExit.Name = "btnExit";
             btnExit.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             btnExit.Size = new System.Drawing.Size(233, 45);
@@ -234,12 +235,13 @@
             // panelProductosSubMenu
             // 
             panelProductosSubMenu.BackColor = System.Drawing.Color.FromArgb(35, 32, 39);
+            panelProductosSubMenu.Controls.Add(button7);
             panelProductosSubMenu.Controls.Add(button6);
             panelProductosSubMenu.Controls.Add(button8);
             panelProductosSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
             panelProductosSubMenu.Location = new System.Drawing.Point(0, 300);
             panelProductosSubMenu.Name = "panelProductosSubMenu";
-            panelProductosSubMenu.Size = new System.Drawing.Size(233, 92);
+            panelProductosSubMenu.Size = new System.Drawing.Size(233, 130);
             panelProductosSubMenu.TabIndex = 4;
             // 
             // button6
@@ -421,6 +423,23 @@
             pictureBox9.TabStop = false;
             pictureBox9.Click += pictureBox9_Click;
             // 
+            // button7
+            // 
+            button7.Dock = System.Windows.Forms.DockStyle.Top;
+            button7.FlatAppearance.BorderSize = 0;
+            button7.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(42, 38, 46);
+            button7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(42, 38, 46);
+            button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            button7.ForeColor = System.Drawing.Color.Silver;
+            button7.Location = new System.Drawing.Point(0, 80);
+            button7.Name = "button7";
+            button7.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            button7.Size = new System.Drawing.Size(233, 40);
+            button7.TabIndex = 3;
+            button7.Text = "Actualizar Producto";
+            button7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            button7.UseVisualStyleBackColor = true;
+            // 
             // Menu
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -472,6 +491,7 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button36;
+        private System.Windows.Forms.Button button7;
     }
 }
 

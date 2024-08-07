@@ -29,6 +29,9 @@
     <ProjectReference Include="..\Domain\Domain.csproj" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Productos\ActualizarProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="ConeccionBD\LaboratorioDataSet.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>

@@ -121,12 +121,13 @@
             label1.AutoSize = true;
             label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             label1.ForeColor = System.Drawing.Color.FromArgb(235, 42, 83);
-            label1.Location = new System.Drawing.Point(235, 37);
+            label1.Location = new System.Drawing.Point(293, 18);
             label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(230, 25);
+            label1.Size = new System.Drawing.Size(155, 25);
             label1.TabIndex = 35;
-            label1.Text = "REGISTRAR PACIENTE";
+            label1.Text = "Registrar Cliente";
+            label1.Click += label1_Click;
             // 
             // txtCed
             // 
@@ -183,7 +184,7 @@
             btnExit.UseVisualStyleBackColor = true;
             btnExit.Click += btnExit_Click;
             // 
-            // RegistrarPaciente
+            // RegistrarCliente
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -202,7 +203,7 @@
             Controls.Add(btnExit);
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            Name = "RegistrarPaciente";
+            Name = "RegistrarCliente";
             Text = "RegistrarPaciente";
             Load += RegistrarPaciente_Load_1;
             ResumeLayout(false);

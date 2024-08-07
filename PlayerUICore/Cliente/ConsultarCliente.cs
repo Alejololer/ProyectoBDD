@@ -32,9 +32,11 @@ namespace PlayerUI.Pacientes
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ClienteDAO pacienteDAO = new ClienteDAO();
             cedula = txtCedula.Text;
-  
+            if (cedula.Length == 0) {
+                llenarDataGridView();
+                return;
+            }
             if (!ValidarCedulaEcuatoriana(cedula))
             {
                 MessageBox.Show("La cédula no es válida.", "Verificar datos", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -45,34 +47,34 @@ namespace PlayerUI.Pacientes
 
             if (!pacientemod.Check(txtCedula.Text))
             {
-                MessageBox.Show("Paciente no encontrado", "Buscar Paciente", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Cliente no encontrado", "Buscar Paciente", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
 
             }
             else
+            {
+                using (var connection = coneccion)
                 {
-                    using (var connection = coneccion)
                     {
-                        {
-                            connection.Open();
+                        connection.Open();
 
-                            var consulta = new SqlCommand();
-                            consulta.CommandText = "SELECT * FROM Clientes WHERE cedula = @cedula";
-                            consulta.Parameters.AddWithValue("@cedula", cedula);
+                        var consulta = new SqlCommand();
+                        consulta.CommandText = "SELECT * FROM Clientes WHERE cedula = @cedula";
+                        consulta.Parameters.AddWithValue("@cedula", cedula);
 
-                            consulta.Connection = connection;  // Asignar la conexión al SqlCommand
+                        consulta.Connection = connection;  // Asignar la conexión al SqlCommand
 
-                            SqlDataAdapter adapter = new SqlDataAdapter(consulta);
+                        SqlDataAdapter adapter = new SqlDataAdapter(consulta);
 
-                            DataTable dt = new DataTable();
-                            adapter.Fill(dt);
+                        DataTable dt = new DataTable();
+                        adapter.Fill(dt);
 
-                            dgvPaciente.DataSource = dt;
+                        dgvPaciente.DataSource = dt;
 
-                        }
                     }
-
                 }
+
+            }
 
 
 
@@ -141,6 +143,11 @@ namespace PlayerUI.Pacientes
         private void ConsultarPaciente_Load(object sender, EventArgs e)
         {
             llenarDataGridView();
+        }
+
+        private void dgvPaciente_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

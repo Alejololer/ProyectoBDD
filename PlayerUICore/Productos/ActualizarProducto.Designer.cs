@@ -1,6 +1,6 @@
 ﻿namespace PlayerUI.Pacientes
 {
-    partial class ActualizarCliente
+    partial class ActualizarProducto
     {
         /// <summary>
         /// Required designer variable.
@@ -32,14 +32,11 @@
             label1 = new System.Windows.Forms.Label();
             btnExit = new System.Windows.Forms.Button();
             label7 = new System.Windows.Forms.Label();
-            txtTel = new System.Windows.Forms.TextBox();
+            txtPrecio = new System.Windows.Forms.TextBox();
             label10 = new System.Windows.Forms.Label();
             txtNom = new System.Windows.Forms.TextBox();
-            txtDir = new System.Windows.Forms.TextBox();
+            txtStock = new System.Windows.Forms.TextBox();
             label6 = new System.Windows.Forms.Label();
-            button2 = new System.Windows.Forms.Button();
-            txtCed = new System.Windows.Forms.TextBox();
-            label4 = new System.Windows.Forms.Label();
             SuspendLayout();
             // 
             // button1
@@ -50,7 +47,7 @@
             button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             button1.ForeColor = System.Drawing.Color.LightGray;
-            button1.Location = new System.Drawing.Point(501, 419);
+            button1.Location = new System.Drawing.Point(501, 345);
             button1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             button1.Name = "button1";
             button1.Size = new System.Drawing.Size(104, 38);
@@ -68,9 +65,9 @@
             label1.Location = new System.Drawing.Point(240, 18);
             label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(251, 25);
+            label1.Size = new System.Drawing.Size(268, 25);
             label1.TabIndex = 50;
-            label1.Text = "Actualizar Datos del Cliente";
+            label1.Text = "Actualizar Datos del Producto";
             // 
             // btnExit
             // 
@@ -94,23 +91,23 @@
             label7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             label7.ForeColor = System.Drawing.SystemColors.Control;
-            label7.Location = new System.Drawing.Point(115, 289);
+            label7.Location = new System.Drawing.Point(115, 209);
             label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             label7.Name = "label7";
-            label7.Size = new System.Drawing.Size(68, 17);
+            label7.Size = new System.Drawing.Size(52, 17);
             label7.TabIndex = 64;
-            label7.Text = "Teléfono:";
+            label7.Text = "Precio:";
             // 
-            // txtTel
+            // txtPrecio
             // 
-            txtTel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            txtTel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            txtTel.Location = new System.Drawing.Point(240, 278);
-            txtTel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            txtTel.MaxLength = 10;
-            txtTel.Name = "txtTel";
-            txtTel.Size = new System.Drawing.Size(365, 26);
-            txtTel.TabIndex = 62;
+            txtPrecio.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            txtPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            txtPrecio.Location = new System.Drawing.Point(240, 198);
+            txtPrecio.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            txtPrecio.MaxLength = 10;
+            txtPrecio.Name = "txtPrecio";
+            txtPrecio.Size = new System.Drawing.Size(365, 26);
+            txtPrecio.TabIndex = 62;
             // 
             // label10
             // 
@@ -118,34 +115,34 @@
             label10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             label10.ForeColor = System.Drawing.SystemColors.Control;
-            label10.Location = new System.Drawing.Point(114, 232);
+            label10.Location = new System.Drawing.Point(114, 136);
             label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             label10.Name = "label10";
-            label10.Size = new System.Drawing.Size(69, 17);
+            label10.Size = new System.Drawing.Size(62, 17);
             label10.TabIndex = 60;
-            label10.Text = "Nombres:";
+            label10.Text = "Nombre:";
             // 
             // txtNom
             // 
             txtNom.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             txtNom.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            txtNom.Location = new System.Drawing.Point(240, 222);
+            txtNom.Location = new System.Drawing.Point(240, 126);
             txtNom.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             txtNom.MaxLength = 30;
             txtNom.Name = "txtNom";
             txtNom.Size = new System.Drawing.Size(365, 26);
             txtNom.TabIndex = 58;
             // 
-            // txtDir
+            // txtStock
             // 
-            txtDir.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            txtDir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            txtDir.Location = new System.Drawing.Point(240, 334);
-            txtDir.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            txtDir.MaxLength = 30;
-            txtDir.Name = "txtDir";
-            txtDir.Size = new System.Drawing.Size(365, 26);
-            txtDir.TabIndex = 63;
+            txtStock.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            txtStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            txtStock.Location = new System.Drawing.Point(240, 271);
+            txtStock.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            txtStock.MaxLength = 30;
+            txtStock.Name = "txtStock";
+            txtStock.Size = new System.Drawing.Size(365, 26);
+            txtStock.TabIndex = 63;
             // 
             // label6
             // 
@@ -153,75 +150,31 @@
             label6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             label6.ForeColor = System.Drawing.SystemColors.Control;
-            label6.Location = new System.Drawing.Point(112, 344);
+            label6.Location = new System.Drawing.Point(112, 281);
             label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             label6.Name = "label6";
-            label6.Size = new System.Drawing.Size(71, 17);
+            label6.Size = new System.Drawing.Size(47, 17);
             label6.TabIndex = 65;
-            label6.Text = "Dirección:";
+            label6.Text = "Stock:";
             // 
-            // button2
-            // 
-            button2.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right;
-            button2.BackColor = System.Drawing.Color.FromArgb(235, 42, 83);
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            button2.ForeColor = System.Drawing.Color.LightGray;
-            button2.Location = new System.Drawing.Point(501, 149);
-            button2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            button2.Name = "button2";
-            button2.Size = new System.Drawing.Size(104, 38);
-            button2.TabIndex = 70;
-            button2.Text = "Consultar";
-            button2.UseVisualStyleBackColor = false;
-            button2.Click += button2_Click;
-            // 
-            // txtCed
-            // 
-            txtCed.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            txtCed.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            txtCed.Location = new System.Drawing.Point(240, 97);
-            txtCed.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            txtCed.MaxLength = 10;
-            txtCed.Name = "txtCed";
-            txtCed.Size = new System.Drawing.Size(365, 26);
-            txtCed.TabIndex = 49;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            label4.ForeColor = System.Drawing.SystemColors.Control;
-            label4.Location = new System.Drawing.Point(56, 108);
-            label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            label4.Name = "label4";
-            label4.Size = new System.Drawing.Size(138, 17);
-            label4.TabIndex = 51;
-            label4.Text = "Cédula de Identidad:";
-            // 
-            // ActualizarCliente
+            // ActualizarProducto
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.FromArgb(32, 30, 45);
             ClientSize = new System.Drawing.Size(700, 600);
-            Controls.Add(button2);
             Controls.Add(label6);
             Controls.Add(label7);
-            Controls.Add(txtDir);
-            Controls.Add(txtTel);
+            Controls.Add(txtStock);
+            Controls.Add(txtPrecio);
             Controls.Add(label10);
             Controls.Add(txtNom);
             Controls.Add(button1);
-            Controls.Add(label4);
             Controls.Add(label1);
-            Controls.Add(txtCed);
             Controls.Add(btnExit);
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            Name = "ActualizarCliente";
+            Name = "ActualizarProducto";
             Text = "ActualizarPaciente";
             Load += ActualizarPaciente_Load;
             ResumeLayout(false);
@@ -234,13 +187,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtTel;
+        private System.Windows.Forms.TextBox txtPrecio;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtNom;
-        private System.Windows.Forms.TextBox txtDir;
+        private System.Windows.Forms.TextBox txtStock;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox txtCed;
-        private System.Windows.Forms.Label label4;
     }
 }

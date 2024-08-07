@@ -31,7 +31,7 @@ namespace PlayerUI.Pacientes
         {
             if(cliente == null) {
                 // Realizar acciones si el formato es válido
-                MessageBox.Show("Primero consulte un paciente!", "Actualizar Paciente", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Primero consulte un cliente!", "Actualizar cliente", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
@@ -51,7 +51,7 @@ namespace PlayerUI.Pacientes
             {
                 ClienteModel pacienteModel = new ClienteModel();
                 pacienteModel.actualizarCliente(txtCed.Text, txtTel.Text, txtDir.Text);
-                MessageBox.Show("Información de Paciente actualizada correctamente", "Actualizar Paciente", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Información de cliente actualizada correctamente", "Actualizar cliente", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -71,7 +71,7 @@ namespace PlayerUI.Pacientes
 
             if (!pacientemod.Check(txtCed.Text))
             {
-                MessageBox.Show("Paciente no encontrado", "Buscar Paciente", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("cliente no encontrado", "Buscar cliente", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
 
             }

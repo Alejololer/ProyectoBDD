@@ -57,22 +57,22 @@ namespace PlayerUI.Pacientes
             var existe = user.Check(txtCed.Text);
             if (existe == true)
             {
-                MessageBox.Show("Un paciente con esta cédula ya está registrado.", "Registro de Paciente", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Un cliente con esta cédula ya está registrado.", "Registro de cliente", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            DialogResult result = MessageBox.Show("¿Está seguro?", "Registro de Paciente", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult result = MessageBox.Show("¿Está seguro?", "Registro de cliente", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
                 ClienteModel model = new ClienteModel();
                 var validRegister = model.registrarCliente(cedula, txtNom.Text, txtTel.Text, txtDir.Text);
                 if (validRegister)
                 {
-                    MessageBox.Show("Paciente registrado con éxito.", "Registro de Paciente", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Cliente registrado con éxito.", "Registro de cliente", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    MessageBox.Show("Error en el registro de paciente.", "Registro de Paciente", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Error en el registro de cliente.", "Registro de cliente", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 }
             }
@@ -166,7 +166,7 @@ namespace PlayerUI.Pacientes
             return digitoVerificador == digitoEsperado;
         }
 
-        
+
         private void RegistrarPaciente_Load(object sender, EventArgs e)
         {
 
@@ -178,6 +178,11 @@ namespace PlayerUI.Pacientes
         }
 
         private void RegistrarPaciente_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }

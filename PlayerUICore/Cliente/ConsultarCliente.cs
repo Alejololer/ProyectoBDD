@@ -13,14 +13,14 @@ using System.Windows.Forms;
 
 namespace PlayerUI.Pacientes
 {
-    public partial class ConsultarPaciente : Form
+    public partial class ConsultarCliente : Form
     {
 
         string cedula;
-        SqlConnection coneccion = new SqlConnection("Data Source=.\\SQLEXPRESS;Initial Catalog=Requerimientos;Integrated Security=SSPI");
+        SqlConnection coneccion = new SqlConnection("Data Source=PCALEJO\\BDD;Initial Catalog=MarujaGuayaquil;User ID=sa;Password=P@ssw0rd");
 
 
-        public ConsultarPaciente()
+        public ConsultarCliente()
         {
             InitializeComponent();
         }
@@ -32,7 +32,7 @@ namespace PlayerUI.Pacientes
 
         private void button1_Click(object sender, EventArgs e)
         {
-            PacienteDAO pacienteDAO = new PacienteDAO();
+            ClienteDAO pacienteDAO = new ClienteDAO();
             cedula = txtCedula.Text;
   
             if (!ValidarCedulaEcuatoriana(cedula))
@@ -41,7 +41,7 @@ namespace PlayerUI.Pacientes
                 return;
             }
 
-            PacienteModel pacientemod = new PacienteModel();
+            ClienteModel pacientemod = new ClienteModel();
 
             if (!pacientemod.Check(txtCedula.Text))
             {
@@ -57,7 +57,7 @@ namespace PlayerUI.Pacientes
                             connection.Open();
 
                             var consulta = new SqlCommand();
-                            consulta.CommandText = "SELECT * FROM dbo.PACIENTES WHERE CIPACIENTE = @cedula";
+                            consulta.CommandText = "SELECT * FROM Clientes WHERE cedula = @cedula";
                             consulta.Parameters.AddWithValue("@cedula", cedula);
 
                             consulta.Connection = connection;  // Asignar la conexión al SqlCommand
@@ -68,7 +68,6 @@ namespace PlayerUI.Pacientes
                             adapter.Fill(dt);
 
                             dgvPaciente.DataSource = dt;
-                            MessageBox.Show("Historial no disponible", "Verificar datos", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         }
                     }
@@ -81,7 +80,7 @@ namespace PlayerUI.Pacientes
 
         private void llenarDataGridView()
         {
-            string consulta = "Select * from dbo.PACIENTES";
+            string consulta = "Select * from Clientes";
             SqlDataAdapter adapter = new SqlDataAdapter(consulta, coneccion);
             DataTable dt = new DataTable();
             adapter.Fill(dt);
@@ -90,16 +89,12 @@ namespace PlayerUI.Pacientes
             dgvPaciente.Columns[0].Width = 100;
             dgvPaciente.Columns[1].HeaderText = "Nombres";
             dgvPaciente.Columns[1].Width = 150;
-            dgvPaciente.Columns[2].HeaderText = "Apellidos";
-            dgvPaciente.Columns[2].Width = 150;
-            dgvPaciente.Columns[3].HeaderText = "Teléfono";
-            dgvPaciente.Columns[3].Width = 100;
-            dgvPaciente.Columns[4].HeaderText = "Correo";
-            dgvPaciente.Columns[4].Width = 200;
-            dgvPaciente.Columns[5].HeaderText = "Dirección";
-            dgvPaciente.Columns[5].Width = 150;
-            dgvPaciente.Columns[6].HeaderText = "Fecha de nacimiento";
-            dgvPaciente.Columns[6].Width = 100;
+            dgvPaciente.Columns[2].HeaderText = "Teléfono";
+            dgvPaciente.Columns[2].Width = 100;
+            dgvPaciente.Columns[3].HeaderText = "Dirección";
+            dgvPaciente.Columns[3].Width = 150;
+            dgvPaciente.Columns[4].HeaderText = "ID Sucursal";
+            dgvPaciente.Columns[4].Width = 100;
         }
 
         private void label1_Click(object sender, EventArgs e)

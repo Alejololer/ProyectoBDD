@@ -16,21 +16,18 @@ using System.Text.RegularExpressions;
 
 namespace PlayerUI.Pacientes
 {
-    public partial class RegistrarPaciente : Form
+    public partial class RegistrarCliente : Form
     {
-        public RegistrarPaciente()
+        public RegistrarCliente()
         {
             InitializeComponent();
             txtCed.KeyPress += OnKeyPressNum;
             txtTel.KeyPress += OnKeyPressNum;
             txtNom.KeyPress += OnKeyPress;
-            txtApe.KeyPress += OnKeyPress;
         }
 
         private void button9_Click(object sender, EventArgs e)
         {
-            DateTime fechaSeleccionada = dateTimePicker.Value.Date; // Obtener solo la parte de la fecha
-            string fechaFormateada = fechaSeleccionada.ToString("yyyy-MM-dd"); // Formatear la fecha
 
             //Validar cedula
             string cedula = txtCed.Text;
@@ -49,14 +46,6 @@ namespace PlayerUI.Pacientes
                 return;
             }
 
-            //Validar apellido
-            if (!ValidarFormatoApe(txtApe))
-            {
-                // Realizar acciones si el formato es válido
-                MessageBox.Show("El formato de los apellidos no es válido.", "Formato no válido", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-
-            }
             if (txtTel.Text.Length <= 6)
             {
                 // Realizar acciones si el formato es válido
@@ -64,17 +53,7 @@ namespace PlayerUI.Pacientes
                 return;
             }
 
-            //Validar correo
-            string correo = txtCorr.Text;
-            if (!ValidarCorreo(correo))
-            {
-                // Realizar acciones si el formato es válido
-                MessageBox.Show("El formato del correo no es válido.", "Formato no válido", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-
-            }
-
-            PacienteModel user = new PacienteModel();
+            ClienteModel user = new ClienteModel();
             var existe = user.Check(txtCed.Text);
             if (existe == true)
             {
@@ -85,8 +64,8 @@ namespace PlayerUI.Pacientes
             DialogResult result = MessageBox.Show("¿Está seguro?", "Registro de Paciente", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
-                PacienteModel model = new PacienteModel();
-                var validRegister = model.registrarPaciente(cedula, txtNom.Text, txtApe.Text, txtTel.Text, txtDir.Text, txtCorr.Text, fechaFormateada);
+                ClienteModel model = new ClienteModel();
+                var validRegister = model.registrarCliente(cedula, txtNom.Text, txtTel.Text, txtDir.Text);
                 if (validRegister)
                 {
                     MessageBox.Show("Paciente registrado con éxito.", "Registro de Paciente", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -150,27 +129,6 @@ namespace PlayerUI.Pacientes
             return true;
         }
 
-        private bool ValidarFormatoApe(System.Windows.Forms.TextBox textBox)
-        {
-            // Verificar si el texto está en el formato "Nombre Apellido1 Apellido2 Apellido3"
-            string[] partes = textBox.Text.Split(' ');
-            if (partes.Length < 2 || partes.Length > 4)
-            {
-                return false;
-            }
-            else
-            {
-                bool formatoCorrecto = partes.All(part =>
-                    !string.IsNullOrWhiteSpace(part) &&
-                    part.All(char.IsLetter) &&
-                    char.IsUpper(part[0])); // Verificar si la primera letra es mayúscula
-                if (!formatoCorrecto)
-                {
-                    return false;
-                }
-            }
-            return true;
-        }
 
 
         public bool ValidarCedulaEcuatoriana(string cedula)
@@ -208,18 +166,7 @@ namespace PlayerUI.Pacientes
             return digitoVerificador == digitoEsperado;
         }
 
-        public bool ValidarCorreo(string correo)
-        {
-            // Expresión regular para validar la estructura básica de un correo electrónico
-            string patron = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
-
-            // Crear objeto Regex con el patrón
-            Regex regex = new Regex(patron);
-
-            // Verificar si la cadena coincide con el patrón
-            return regex.IsMatch(correo);
-        }
-
+        
         private void RegistrarPaciente_Load(object sender, EventArgs e)
         {
 

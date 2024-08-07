@@ -1,6 +1,5 @@
 ﻿using DataAccess.Entities;
 using Domain;
-using PlayerUI.Pacientes;
 using PlayerUICore.Usuario;
 using System;
 using System.Collections.Generic;
@@ -17,7 +16,7 @@ namespace PlayerUI.Pedidos
 {
     public partial class RegistrarPedido : Form
     {
-        Paciente paciente = null;
+        Cliente Cliente = null;
         Pedido pedido = null;
         BindingList<TipoExamen> tiposExamenPedido = null;
         List<TipoExamen> tipoExamens = new List<TipoExamen>();
@@ -170,7 +169,7 @@ namespace PlayerUI.Pedidos
 
         private void button9_Click(object sender, EventArgs e)
         {
-            if(paciente==null)
+            if(Cliente==null)
             {
                 MessageBox.Show("Primero debe registrar la información del cliente para registrar un pedido!", "Registrar Pedido", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
@@ -219,21 +218,21 @@ namespace PlayerUI.Pedidos
                 MessageBox.Show("La cédula no es válida.", "Formato no válido", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            PacienteModel tp = new PacienteModel();
+            ClienteModel tp = new ClienteModel();
             if (!tp.Check(txtCI.Text))
             {
-                MessageBox.Show("Paciente no encontrado", "Registrar Pedido", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Cliente no encontrado", "Registrar Pedido", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
             PedidoModel temp = new PedidoModel();
             if (temp.Check(cedula))
             {
                 // Realizar acciones si el formato es válido
-                MessageBox.Show("Ya existe un pedido pendiente para este paciente!", "Registrar Pedido", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Ya existe un pedido pendiente para este Cliente!", "Registrar Pedido", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            paciente = tp.obtenerPacienteCI(txtCI.Text);
-            if (paciente != null)
+            Cliente = tp.obtenerClienteCI(txtCI.Text);
+            if (Cliente != null)
             {
                 txtCI.ReadOnly = true;
                 txtNom.ReadOnly = true;
@@ -246,13 +245,9 @@ namespace PlayerUI.Pedidos
                 // Configura el TextBox encima del DateTimePicker, poner despues de obtener
                 textBox1.ReadOnly = true;
                 textBox1.BackColor = SystemColors.Control; // Cambia el color de fondo si es necesario
-                txtNom.Text = paciente.nombresPaciente;
-                txtApe.Text = paciente.apellidosPaciente;
-                txtCorr.Text = paciente.correoPaciente;
-                txtTel.Text = paciente.telefonoPaciente;
-                txtDir.Text = paciente.direccionPaciente;
+                txtNom.Text = Cliente.nombresCliente;
+                txtTel.Text = Cliente.telefonoCliente;
                 textBox1.Visible = true;
-                textBox1.Text = paciente.fechaNacPaciente;
                 pedido = new Pedido(txtCI.Text);
                 pedido.CIPedido = txtCI.Text;
                 comboBox1.Enabled = true;
@@ -260,7 +255,7 @@ namespace PlayerUI.Pedidos
             else
             {
                 // Realizar acciones si el formato es válido
-                MessageBox.Show("Paciente no encontrado!.", "Registrar Pedido", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Cliente no encontrado!.", "Registrar Pedido", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
         }
@@ -287,9 +282,9 @@ namespace PlayerUI.Pedidos
 
         private void button4_Click(object sender, EventArgs e)
         {
-            if (paciente != null)
+            if (Cliente != null)
             {
-                MessageBox.Show("Un paciente ya ha sido consultado, no puede registrar uno!", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Un Cliente ya ha sido consultado, no puede registrar uno!", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
             else
@@ -339,27 +334,27 @@ namespace PlayerUI.Pedidos
 
                 }
 
-                PacienteModel user = new PacienteModel();
+                ClienteModel user = new ClienteModel();
                 var existe = user.Check(txtCI.Text);
                 if (existe == true)
                 {
-                    MessageBox.Show("Un paciente con esta cédula ya está registrado.", "Registro de Paciente", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Un Cliente con esta cédula ya está registrado.", "Registro de Cliente", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
-                DialogResult result = MessageBox.Show("¿Está seguro?", "Registro de Paciente", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult result = MessageBox.Show("¿Está seguro?", "Registro de Cliente", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
-                    PacienteModel model = new PacienteModel();
-                    var validRegister = model.registrarPaciente(cedula, txtNom.Text, txtApe.Text, txtTel.Text, txtDir.Text, txtCorr.Text, fechaFormateada);
+                    ClienteModel model = new ClienteModel();
+                    var validRegister = model.registrarCliente(cedula, txtNom.Text, txtTel.Text, txtDir.Text);
                     if (validRegister)
                     {
-                        MessageBox.Show("Paciente registrado con éxito.", "Registro de Paciente", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        paciente = model.obtenerPacienteCI(txtCI.Text);
+                        MessageBox.Show("Cliente registrado con éxito.", "Registro de Cliente", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Cliente = model.obtenerClienteCI(txtCI.Text);
                     }
                     else
                     {
-                        MessageBox.Show("Error en el registro de paciente.", "Registro de Paciente", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Error en el registro de Cliente.", "Registro de Cliente", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                     }
                 }
@@ -390,7 +385,7 @@ namespace PlayerUI.Pedidos
 
             dateTimePicker1.Enabled = true;
             dateTimePicker1.Value = DateTime.Now;
-            paciente = null;
+            Cliente = null;
             tiposExamenPedido = null;
             dgvTiposExamen.Enabled = false;
             textBox1.Visible = false;

@@ -1,6 +1,6 @@
 ﻿namespace PlayerUI.Pacientes
 {
-    partial class ConsultarPaciente
+    partial class ConsultarCliente
     {
         /// <summary>
         /// Required designer variable.
@@ -33,15 +33,8 @@
             label1 = new System.Windows.Forms.Label();
             txtCedula = new System.Windows.Forms.TextBox();
             btnExit = new System.Windows.Forms.Button();
-            label2 = new System.Windows.Forms.Label();
             dgvPaciente = new System.Windows.Forms.DataGridView();
-            dataGridView2 = new System.Windows.Forms.DataGridView();
-            label3 = new System.Windows.Forms.Label();
-            dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)dgvPaciente).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             SuspendLayout();
             // 
             // button1
@@ -84,9 +77,9 @@
             label1.Location = new System.Drawing.Point(235, 25);
             label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(231, 25);
+            label1.Size = new System.Drawing.Size(193, 25);
             label1.TabIndex = 50;
-            label1.Text = "DATOS DEL PACIENTE";
+            label1.Text = "Consulta de Clientes";
             label1.Click += label1_Click;
             // 
             // txtCedula
@@ -97,7 +90,7 @@
             txtCedula.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             txtCedula.MaxLength = 10;
             txtCedula.Name = "txtCedula";
-            txtCedula.Size = new System.Drawing.Size(312, 26);
+            txtCedula.Size = new System.Drawing.Size(391, 26);
             txtCedula.TabIndex = 49;
             // 
             // btnExit
@@ -116,89 +109,19 @@
             btnExit.UseVisualStyleBackColor = true;
             btnExit.Click += btnExit_Click;
             // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            label2.ForeColor = System.Drawing.Color.FromArgb(235, 42, 83);
-            label2.Location = new System.Drawing.Point(20, 276);
-            label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(81, 25);
-            label2.TabIndex = 55;
-            label2.Text = "Historial";
-            // 
             // dgvPaciente
             // 
             dgvPaciente.AllowUserToAddRows = false;
             dgvPaciente.AllowUserToDeleteRows = false;
             dgvPaciente.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             dgvPaciente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvPaciente.Location = new System.Drawing.Point(20, 135);
+            dgvPaciente.Location = new System.Drawing.Point(20, 152);
             dgvPaciente.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             dgvPaciente.Name = "dgvPaciente";
             dgvPaciente.ReadOnly = true;
             dgvPaciente.RowHeadersWidth = 51;
-            dgvPaciente.Size = new System.Drawing.Size(633, 130);
+            dgvPaciente.Size = new System.Drawing.Size(633, 357);
             dgvPaciente.TabIndex = 56;
-            // 
-            // dataGridView2
-            // 
-            dataGridView2.AllowUserToAddRows = false;
-            dataGridView2.AllowUserToDeleteRows = false;
-            dataGridView2.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Location = new System.Drawing.Point(20, 351);
-            dataGridView2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            dataGridView2.Name = "dataGridView2";
-            dataGridView2.ReadOnly = true;
-            dataGridView2.RowHeadersWidth = 51;
-            dataGridView2.Size = new System.Drawing.Size(633, 157);
-            dataGridView2.TabIndex = 57;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            label3.ForeColor = System.Drawing.SystemColors.Control;
-            label3.Location = new System.Drawing.Point(20, 313);
-            label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(90, 17);
-            label3.TabIndex = 62;
-            label3.Text = "Fecha Inicial:";
-            // 
-            // dateTimePicker1
-            // 
-            dateTimePicker1.Location = new System.Drawing.Point(116, 307);
-            dateTimePicker1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new System.Drawing.Size(189, 23);
-            dateTimePicker1.TabIndex = 63;
-            // 
-            // dateTimePicker2
-            // 
-            dateTimePicker2.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
-            dateTimePicker2.Location = new System.Drawing.Point(474, 307);
-            dateTimePicker2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new System.Drawing.Size(183, 23);
-            dateTimePicker2.TabIndex = 65;
-            // 
-            // label5
-            // 
-            label5.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
-            label5.AutoSize = true;
-            label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            label5.ForeColor = System.Drawing.SystemColors.Control;
-            label5.Location = new System.Drawing.Point(366, 313);
-            label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            label5.Name = "label5";
-            label5.Size = new System.Drawing.Size(85, 17);
-            label5.TabIndex = 64;
-            label5.Text = "Fecha Final:";
             // 
             // ConsultarPaciente
             // 
@@ -206,13 +129,7 @@
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.FromArgb(32, 30, 45);
             ClientSize = new System.Drawing.Size(700, 600);
-            Controls.Add(dateTimePicker2);
-            Controls.Add(label5);
-            Controls.Add(dateTimePicker1);
-            Controls.Add(label3);
-            Controls.Add(dataGridView2);
             Controls.Add(dgvPaciente);
-            Controls.Add(label2);
             Controls.Add(button1);
             Controls.Add(label4);
             Controls.Add(label1);
@@ -224,7 +141,6 @@
             Text = "ConsultarPaciente";
             Load += ConsultarPaciente_Load;
             ((System.ComponentModel.ISupportInitialize)dgvPaciente).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -236,12 +152,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtCedula;
         private System.Windows.Forms.Button btnExit;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dgvPaciente;
-        private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.Label label5;
     }
 }

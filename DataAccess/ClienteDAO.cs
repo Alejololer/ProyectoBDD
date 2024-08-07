@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess
 {
-    public class PacienteDAO : ConnectionToSQL
+    public class ClienteDAO : ConnectionToSQL
     {
         public bool Check(string CI)
         {
@@ -18,7 +18,7 @@ namespace DataAccess
                 using (var command = new SqlCommand())
                 {
                     command.Connection = connection;
-                    command.CommandText = "Select * from Pacientes where CIPACIENTE=@CI";
+                    command.CommandText = "Select * from Clientes where cedula=@CI";
                     command.Parameters.AddWithValue("@CI", CI);
                     command.CommandType = System.Data.CommandType.Text;
                     SqlDataReader reader = command.ExecuteReader();
@@ -31,8 +31,7 @@ namespace DataAccess
                 }
             }
         }
-        public bool registrarPaciente(string cedula, string nombres, string apellidos, string telefono, string direccion,
-            string correo, string fechanac)
+        public bool registrarCliente(string cedula, string nombre, string telefono, string direccion)
         {
             using (var connection = GetConnection())
             {
@@ -40,14 +39,11 @@ namespace DataAccess
                 using (var command = new SqlCommand())
                 {
                     command.Connection = connection;
-                    command.CommandText = "Insert into Pacientes(CIPACIENTE, NOMBRESPACIENTE, APELLIDOSPACIENTE, TELEFONOPACIENTE, CORREOPACIENTE, DIRECCIONPACIENTE, FECHANACPACIENTE) values (@cedula, @nombres, @apellidos, @telefono, @correo, @direccion, @fechanac)";
+                    command.CommandText = "Insert into Clientes(cedula, nombre, telefono, direccion, id_sucursal) values (@cedula, @nombres, @telefono, @direccion, 2)";
                     command.Parameters.AddWithValue("@cedula", cedula);
-                    command.Parameters.AddWithValue("@nombres", nombres);
-                    command.Parameters.AddWithValue("@apellidos", apellidos);
+                    command.Parameters.AddWithValue("@nombres", nombre);
                     command.Parameters.AddWithValue("@telefono", telefono);
                     command.Parameters.AddWithValue("@direccion", direccion);
-                    command.Parameters.AddWithValue("@correo", correo);
-                    command.Parameters.AddWithValue("@fechanac", fechanac);
                     int filasAfectadas = command.ExecuteNonQuery();
 
                     if (filasAfectadas > 0)
@@ -62,39 +58,37 @@ namespace DataAccess
             }
         }
 
-        public Paciente ObtenerPacienteCI(string CIPaciente)
+        public Cliente ObtenerClienteCI(string CICliente)
         {
-            Paciente paciente = null;
+            Cliente Cliente = null;
             using (var connection = GetConnection())
             {
                 connection.Open();
                 using (var command = new SqlCommand())
                 {
                     command.Connection = connection;
-                    command.CommandText = "SELECT * FROM Pacientes WHERE CIPACIENTE = @cedula";
-                    command.Parameters.AddWithValue("@cedula", CIPaciente);
+                    command.CommandText = "SELECT * FROM Clientes WHERE cedula = @cedula";
+                    command.Parameters.AddWithValue("@cedula", CICliente);
                     using(SqlDataReader reader = command.ExecuteReader())
                     {
                         if(reader.Read())
                         {
-                            paciente = new Paciente
+                            Cliente = new Cliente
                             (
                                 reader.GetString(0),
                                 reader.GetString(1),
                                 reader.GetString(2),
                                 reader.GetString(3),
-                                reader.GetString(4),
-                                reader.GetString(5),
-                                reader.GetDateTime(6).ToString("yyyy-MM-dd")
+                                reader.GetInt32(4)
                             );
                         }
                     }
                 }
             }
-            return paciente;
+            return Cliente;
         }
 
-        public void actualizarPaciente(string cedula, string telefono, string correo , string direccion)
+        public void actualizarCliente(string cedula, string telefono, string direccion)
         {
             using (var connection = GetConnection())
             {
@@ -102,10 +96,9 @@ namespace DataAccess
                 using (var command = new SqlCommand())
                 {
                     command.Connection = connection;
-                    command.CommandText = "UPDATE Pacientes set TELEFONOPACIENTE = @telefono, CORREOPACIENTE = @correo, DIRECCIONPACIENTE = @direccion WHERE CIPACIENTE = @cedula";
+                    command.CommandText = "UPDATE Clientes set telefono = @telefono, direccion = @direccion WHERE cedula = @cedula";
                     command.Parameters.AddWithValue("@cedula", cedula);
                     command.Parameters.AddWithValue("@telefono", telefono);
-                    command.Parameters.AddWithValue("@correo", correo);
                     command.Parameters.AddWithValue("@direccion", direccion);
                     command.ExecuteNonQuery();
                 }

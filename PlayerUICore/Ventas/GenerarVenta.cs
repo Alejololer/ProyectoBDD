@@ -16,7 +16,7 @@ namespace PlayerUI.Ventas
     {
         Pedido pedido = null;
         Venta venta = null;
-        Paciente paciente = null;
+        Cliente Cliente = null;
         BindingList<Examen> examenes = null;
         IVA iva = null;
         public GenerarVenta(User user)
@@ -132,7 +132,7 @@ namespace PlayerUI.Ventas
             VentaModel ventaModel = new VentaModel();
             if (ventaModel.Check(pedido.Id))
             {
-                MessageBox.Show("Ya se ha generado una venta para el pedido de este paciente", "Generar Venta", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Ya se ha generado una venta para el pedido de este Cliente", "Generar Venta", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
             // Enviar un mensaje
@@ -177,22 +177,21 @@ namespace PlayerUI.Ventas
                 MessageBox.Show("La cédula no es válida.", "Formato no válido", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            PacienteModel tp = new PacienteModel();
+            ClienteModel tp = new ClienteModel();
             if (!tp.Check(txtCI.Text))
             {
-                MessageBox.Show("Paciente no encontrado", "Registrar Pedido", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Cliente no encontrado", "Registrar Pedido", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
             PedidoModel temp = new PedidoModel();
             if (!temp.Check(cedula))
             {
                 // Realizar acciones si el formato es válido
-                MessageBox.Show("No existe un pedido pendiente para este paciente!", "Registrar Pedido", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("No existe un pedido pendiente para este Cliente!", "Registrar Pedido", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            paciente = tp.obtenerPacienteCI(txtCI.Text);
-            txtNom.Text = paciente.nombresPaciente;
-            txtApe.Text = paciente.apellidosPaciente;
+            Cliente = tp.obtenerClienteCI(txtCI.Text);
+            txtNom.Text = Cliente.nombresCliente;
             PedidoModel pedidoModel = new PedidoModel();
             pedido = pedidoModel.ObtenerPedido(txtCI.Text);
             VentaModel ventaModel = new VentaModel();
@@ -233,7 +232,7 @@ namespace PlayerUI.Ventas
             txtTotalIVA.Text = "";
             txtTotalNoIVA.Text = "";
             examenes = null;
-            paciente = null;
+            Cliente = null;
             pedido = null;
             venta = null;
             dataGridView1.Rows.Clear();

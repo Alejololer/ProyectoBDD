@@ -30,22 +30,20 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
             panelSideMenu = new System.Windows.Forms.Panel();
-            panel3 = new System.Windows.Forms.Panel();
+            panelEmpleadosSubMenu = new System.Windows.Forms.Panel();
             button9 = new System.Windows.Forms.Button();
             button5 = new System.Windows.Forms.Button();
             button1 = new System.Windows.Forms.Button();
-            panelParámetrosSubMenu = new System.Windows.Forms.Panel();
+            panelFacturaciónSubMenu = new System.Windows.Forms.Panel();
             button36 = new System.Windows.Forms.Button();
             button37 = new System.Windows.Forms.Button();
             btnParámetros = new System.Windows.Forms.Button();
             btnExit = new System.Windows.Forms.Button();
-            panelPedidosSubMenu = new System.Windows.Forms.Panel();
-            button7 = new System.Windows.Forms.Button();
-            button11 = new System.Windows.Forms.Button();
+            panelProductosSubMenu = new System.Windows.Forms.Panel();
             button6 = new System.Windows.Forms.Button();
             button8 = new System.Windows.Forms.Button();
             btnPedidos = new System.Windows.Forms.Button();
-            panelPacientesSubMenu = new System.Windows.Forms.Panel();
+            panelClientesSubMenu = new System.Windows.Forms.Panel();
             button4 = new System.Windows.Forms.Button();
             button3 = new System.Windows.Forms.Button();
             button2 = new System.Windows.Forms.Button();
@@ -54,10 +52,10 @@
             panelChildForm = new System.Windows.Forms.Panel();
             pictureBox9 = new System.Windows.Forms.PictureBox();
             panelSideMenu.SuspendLayout();
-            panel3.SuspendLayout();
-            panelParámetrosSubMenu.SuspendLayout();
-            panelPedidosSubMenu.SuspendLayout();
-            panelPacientesSubMenu.SuspendLayout();
+            panelEmpleadosSubMenu.SuspendLayout();
+            panelFacturaciónSubMenu.SuspendLayout();
+            panelProductosSubMenu.SuspendLayout();
+            panelClientesSubMenu.SuspendLayout();
             panelChildForm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
             SuspendLayout();
@@ -66,14 +64,14 @@
             // 
             panelSideMenu.AutoScroll = true;
             panelSideMenu.BackColor = System.Drawing.Color.FromArgb(11, 7, 17);
-            panelSideMenu.Controls.Add(panel3);
+            panelSideMenu.Controls.Add(panelEmpleadosSubMenu);
             panelSideMenu.Controls.Add(button1);
-            panelSideMenu.Controls.Add(panelParámetrosSubMenu);
+            panelSideMenu.Controls.Add(panelFacturaciónSubMenu);
             panelSideMenu.Controls.Add(btnParámetros);
             panelSideMenu.Controls.Add(btnExit);
-            panelSideMenu.Controls.Add(panelPedidosSubMenu);
+            panelSideMenu.Controls.Add(panelProductosSubMenu);
             panelSideMenu.Controls.Add(btnPedidos);
-            panelSideMenu.Controls.Add(panelPacientesSubMenu);
+            panelSideMenu.Controls.Add(panelClientesSubMenu);
             panelSideMenu.Controls.Add(btnPacientes);
             panelSideMenu.Controls.Add(panelLogo);
             panelSideMenu.Dock = System.Windows.Forms.DockStyle.Left;
@@ -82,16 +80,16 @@
             panelSideMenu.Size = new System.Drawing.Size(250, 600);
             panelSideMenu.TabIndex = 0;
             // 
-            // panel3
+            // panelEmpleadosSubMenu
             // 
-            panel3.BackColor = System.Drawing.Color.FromArgb(35, 32, 39);
-            panel3.Controls.Add(button9);
-            panel3.Controls.Add(button5);
-            panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            panel3.Location = new System.Drawing.Point(0, 645);
-            panel3.Name = "panel3";
-            panel3.Size = new System.Drawing.Size(233, 91);
-            panel3.TabIndex = 25;
+            panelEmpleadosSubMenu.BackColor = System.Drawing.Color.FromArgb(35, 32, 39);
+            panelEmpleadosSubMenu.Controls.Add(button9);
+            panelEmpleadosSubMenu.Controls.Add(button5);
+            panelEmpleadosSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
+            panelEmpleadosSubMenu.Location = new System.Drawing.Point(0, 567);
+            panelEmpleadosSubMenu.Name = "panelEmpleadosSubMenu";
+            panelEmpleadosSubMenu.Size = new System.Drawing.Size(233, 91);
+            panelEmpleadosSubMenu.TabIndex = 25;
             // 
             // button9
             // 
@@ -126,7 +124,6 @@
             button5.Text = "Registrar Tipo de Examen";
             button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             button5.UseVisualStyleBackColor = true;
-            button5.Click += button5_Click_2;
             // 
             // button1
             // 
@@ -137,7 +134,7 @@
             button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             button1.ForeColor = System.Drawing.Color.Silver;
             button1.Image = (System.Drawing.Image)resources.GetObject("button1.Image");
-            button1.Location = new System.Drawing.Point(0, 600);
+            button1.Location = new System.Drawing.Point(0, 522);
             button1.Name = "button1";
             button1.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             button1.Size = new System.Drawing.Size(233, 45);
@@ -147,16 +144,16 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
-            // panelParámetrosSubMenu
+            // panelFacturaciónSubMenu
             // 
-            panelParámetrosSubMenu.BackColor = System.Drawing.Color.FromArgb(35, 32, 39);
-            panelParámetrosSubMenu.Controls.Add(button36);
-            panelParámetrosSubMenu.Controls.Add(button37);
-            panelParámetrosSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
-            panelParámetrosSubMenu.Location = new System.Drawing.Point(0, 515);
-            panelParámetrosSubMenu.Name = "panelParámetrosSubMenu";
-            panelParámetrosSubMenu.Size = new System.Drawing.Size(233, 85);
-            panelParámetrosSubMenu.TabIndex = 19;
+            panelFacturaciónSubMenu.BackColor = System.Drawing.Color.FromArgb(35, 32, 39);
+            panelFacturaciónSubMenu.Controls.Add(button36);
+            panelFacturaciónSubMenu.Controls.Add(button37);
+            panelFacturaciónSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
+            panelFacturaciónSubMenu.Location = new System.Drawing.Point(0, 437);
+            panelFacturaciónSubMenu.Name = "panelFacturaciónSubMenu";
+            panelFacturaciónSubMenu.Size = new System.Drawing.Size(233, 85);
+            panelFacturaciónSubMenu.TabIndex = 19;
             // 
             // button36
             // 
@@ -203,7 +200,7 @@
             btnParámetros.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             btnParámetros.ForeColor = System.Drawing.Color.Silver;
             btnParámetros.Image = (System.Drawing.Image)resources.GetObject("btnParámetros.Image");
-            btnParámetros.Location = new System.Drawing.Point(0, 470);
+            btnParámetros.Location = new System.Drawing.Point(0, 392);
             btnParámetros.Name = "btnParámetros";
             btnParámetros.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             btnParámetros.Size = new System.Drawing.Size(233, 45);
@@ -223,65 +220,27 @@
             btnExit.ForeColor = System.Drawing.Color.Silver;
             btnExit.Image = (System.Drawing.Image)resources.GetObject("btnExit.Image");
             btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            btnExit.Location = new System.Drawing.Point(0, 736);
+            btnExit.Location = new System.Drawing.Point(0, 658);
             btnExit.Name = "btnExit";
             btnExit.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             btnExit.Size = new System.Drawing.Size(233, 45);
             btnExit.TabIndex = 9;
-            btnExit.Text = "  Cerrar Sesión";
+            btnExit.Text = "  Salir";
             btnExit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             btnExit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             btnExit.UseVisualStyleBackColor = true;
             btnExit.Click += btnExit_Click;
             // 
-            // panelPedidosSubMenu
+            // panelProductosSubMenu
             // 
-            panelPedidosSubMenu.BackColor = System.Drawing.Color.FromArgb(35, 32, 39);
-            panelPedidosSubMenu.Controls.Add(button7);
-            panelPedidosSubMenu.Controls.Add(button11);
-            panelPedidosSubMenu.Controls.Add(button6);
-            panelPedidosSubMenu.Controls.Add(button8);
-            panelPedidosSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
-            panelPedidosSubMenu.Location = new System.Drawing.Point(0, 300);
-            panelPedidosSubMenu.Name = "panelPedidosSubMenu";
-            panelPedidosSubMenu.Size = new System.Drawing.Size(233, 170);
-            panelPedidosSubMenu.TabIndex = 4;
-            // 
-            // button7
-            // 
-            button7.Dock = System.Windows.Forms.DockStyle.Top;
-            button7.FlatAppearance.BorderSize = 0;
-            button7.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(42, 38, 46);
-            button7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(42, 38, 46);
-            button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            button7.ForeColor = System.Drawing.Color.Silver;
-            button7.Location = new System.Drawing.Point(0, 120);
-            button7.Name = "button7";
-            button7.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            button7.Size = new System.Drawing.Size(233, 40);
-            button7.TabIndex = 5;
-            button7.Text = "Estadísticas de Pedidos";
-            button7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            button7.UseVisualStyleBackColor = true;
-            button7.Click += button7_Click;
-            // 
-            // button11
-            // 
-            button11.Dock = System.Windows.Forms.DockStyle.Top;
-            button11.FlatAppearance.BorderSize = 0;
-            button11.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(42, 38, 46);
-            button11.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(42, 38, 46);
-            button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            button11.ForeColor = System.Drawing.Color.Silver;
-            button11.Location = new System.Drawing.Point(0, 80);
-            button11.Name = "button11";
-            button11.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            button11.Size = new System.Drawing.Size(233, 40);
-            button11.TabIndex = 4;
-            button11.Text = "Anular Pedido";
-            button11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            button11.UseVisualStyleBackColor = true;
-            button11.Click += button11_Click;
+            panelProductosSubMenu.BackColor = System.Drawing.Color.FromArgb(35, 32, 39);
+            panelProductosSubMenu.Controls.Add(button6);
+            panelProductosSubMenu.Controls.Add(button8);
+            panelProductosSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
+            panelProductosSubMenu.Location = new System.Drawing.Point(0, 300);
+            panelProductosSubMenu.Name = "panelProductosSubMenu";
+            panelProductosSubMenu.Size = new System.Drawing.Size(233, 92);
+            panelProductosSubMenu.TabIndex = 4;
             // 
             // button6
             // 
@@ -296,7 +255,7 @@
             button6.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             button6.Size = new System.Drawing.Size(233, 40);
             button6.TabIndex = 2;
-            button6.Text = "Consultar Pedido";
+            button6.Text = "Consultar Producto";
             button6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             button6.UseVisualStyleBackColor = true;
             button6.Click += button6_Click;
@@ -314,7 +273,7 @@
             button8.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             button8.Size = new System.Drawing.Size(233, 40);
             button8.TabIndex = 0;
-            button8.Text = "Registrar Pedido";
+            button8.Text = "Registrar Producto";
             button8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             button8.UseVisualStyleBackColor = true;
             button8.Click += button8_Click;
@@ -339,18 +298,17 @@
             btnPedidos.UseVisualStyleBackColor = true;
             btnPedidos.Click += btnPlaylist_Click;
             // 
-            // panelPacientesSubMenu
+            // panelClientesSubMenu
             // 
-            panelPacientesSubMenu.BackColor = System.Drawing.Color.FromArgb(35, 32, 39);
-            panelPacientesSubMenu.Controls.Add(button4);
-            panelPacientesSubMenu.Controls.Add(button3);
-            panelPacientesSubMenu.Controls.Add(button2);
-            panelPacientesSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
-            panelPacientesSubMenu.Location = new System.Drawing.Point(0, 129);
-            panelPacientesSubMenu.Name = "panelPacientesSubMenu";
-            panelPacientesSubMenu.Size = new System.Drawing.Size(233, 126);
-            panelPacientesSubMenu.TabIndex = 2;
-            panelPacientesSubMenu.Paint += panelPacientesSubPacientes_Paint;
+            panelClientesSubMenu.BackColor = System.Drawing.Color.FromArgb(35, 32, 39);
+            panelClientesSubMenu.Controls.Add(button4);
+            panelClientesSubMenu.Controls.Add(button3);
+            panelClientesSubMenu.Controls.Add(button2);
+            panelClientesSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
+            panelClientesSubMenu.Location = new System.Drawing.Point(0, 129);
+            panelClientesSubMenu.Name = "panelClientesSubMenu";
+            panelClientesSubMenu.Size = new System.Drawing.Size(233, 126);
+            panelClientesSubMenu.TabIndex = 2;
             // 
             // button4
             // 
@@ -365,7 +323,7 @@
             button4.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             button4.Size = new System.Drawing.Size(233, 40);
             button4.TabIndex = 2;
-            button4.Text = "Actualizar Paciente";
+            button4.Text = "Actualizar Cliente";
             button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             button4.UseVisualStyleBackColor = true;
             button4.Click += button4_Click;
@@ -481,10 +439,10 @@
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             Text = "AmatreSis";
             panelSideMenu.ResumeLayout(false);
-            panel3.ResumeLayout(false);
-            panelParámetrosSubMenu.ResumeLayout(false);
-            panelPedidosSubMenu.ResumeLayout(false);
-            panelPacientesSubMenu.ResumeLayout(false);
+            panelEmpleadosSubMenu.ResumeLayout(false);
+            panelFacturaciónSubMenu.ResumeLayout(false);
+            panelProductosSubMenu.ResumeLayout(false);
+            panelClientesSubMenu.ResumeLayout(false);
             panelChildForm.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
             ResumeLayout(false);
@@ -493,25 +451,23 @@
         #endregion
 
         private System.Windows.Forms.Panel panelSideMenu;
-        private System.Windows.Forms.Panel panelPacientesSubMenu;
+        private System.Windows.Forms.Panel panelClientesSubMenu;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Panel panelPedidosSubMenu;
+        private System.Windows.Forms.Panel panelProductosSubMenu;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button btnPedidos;
         private System.Windows.Forms.Panel panelLogo;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Panel panelChildForm;
-        private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Panel panelParámetrosSubMenu;
+        private System.Windows.Forms.Panel panelFacturaciónSubMenu;
         private System.Windows.Forms.Button button37;
         private System.Windows.Forms.Button btnParámetros;
         private System.Windows.Forms.Button btnPacientes;
         private System.Windows.Forms.PictureBox pictureBox9;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panelEmpleadosSubMenu;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button1;

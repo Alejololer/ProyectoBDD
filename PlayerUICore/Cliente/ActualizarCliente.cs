@@ -13,17 +13,14 @@ using System.Windows.Forms;
 
 namespace PlayerUI.Pacientes
 {
-    public partial class ActualizarPaciente : Form
+    public partial class ActualizarCliente : Form
     {
-        Paciente paciente = null;
-        public ActualizarPaciente()
+        Cliente cliente = null;
+        public ActualizarCliente()
         {
             InitializeComponent();
             txtNom.ReadOnly = true;
-            txtApe.ReadOnly = true;
-            txtFechaNac.ReadOnly = true;
             txtDir.ReadOnly = true;
-            txtCorr.ReadOnly = true;
             txtTel.ReadOnly = true;
             txtCed.KeyPress += OnKeyPressNum;
             txtTel.KeyPress += OnKeyPressNum;
@@ -32,7 +29,7 @@ namespace PlayerUI.Pacientes
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if(paciente == null) {
+            if(cliente == null) {
                 // Realizar acciones si el formato es válido
                 MessageBox.Show("Primero consulte un paciente!", "Actualizar Paciente", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
@@ -45,14 +42,6 @@ namespace PlayerUI.Pacientes
                 return;
             }
 
-            //Validar correo
-            string correo = txtCorr.Text;
-            if (!ValidarCorreo(correo))
-            {
-                // Realizar acciones si el formato es válido
-                MessageBox.Show("El formato del correo no es válido.", "Formato no válido", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
 
 
 
@@ -60,8 +49,8 @@ namespace PlayerUI.Pacientes
             DialogResult result = MessageBox.Show("¿Está seguro?", "Actualizar información", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
-                PacienteModel pacienteModel = new PacienteModel();
-                pacienteModel.actualizarPaciente(txtCed.Text, txtTel.Text, correo, txtDir.Text);
+                ClienteModel pacienteModel = new ClienteModel();
+                pacienteModel.actualizarCliente(txtCed.Text, txtTel.Text, txtDir.Text);
                 MessageBox.Show("Información de Paciente actualizada correctamente", "Actualizar Paciente", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
@@ -78,7 +67,7 @@ namespace PlayerUI.Pacientes
 
         private void button2_Click(object sender, EventArgs e)
         {
-            PacienteModel pacientemod = new PacienteModel();
+            ClienteModel pacientemod = new ClienteModel();
 
             if (!pacientemod.Check(txtCed.Text))
             {
@@ -95,16 +84,12 @@ namespace PlayerUI.Pacientes
                 return;
             }
 
-            paciente = new Paciente();
-            paciente = pacientemod.obtenerPacienteCI(cedula);
-            txtNom.Text = paciente.nombresPaciente;
-            txtApe.Text = paciente.apellidosPaciente;
-            txtCorr.Text = paciente.correoPaciente;
-            txtFechaNac.Text = paciente.fechaNacPaciente;
-            txtDir.Text = paciente.direccionPaciente;
-            txtTel.Text = paciente.telefonoPaciente;
+            cliente = new Cliente();
+            cliente = pacientemod.obtenerClienteCI(cedula);
+            txtNom.Text = cliente.nombresCliente;
+            txtDir.Text = cliente.direccionClientee;
+            txtTel.Text = cliente.telefonoCliente;
             txtTel.ReadOnly = false;
-            txtCorr.ReadOnly = false;
             txtDir.ReadOnly = false;
 
         }
@@ -144,17 +129,6 @@ namespace PlayerUI.Pacientes
             return digitoVerificador == digitoEsperado;
         }
 
-        public bool ValidarCorreo(string correo)
-        {
-            // Expresión regular para validar la estructura básica de un correo electrónico
-            string patron = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
-
-            // Crear objeto Regex con el patrón
-            Regex regex = new Regex(patron);
-
-            // Verificar si la cadena coincide con el patrón
-            return regex.IsMatch(correo);
-        }
 
         private void OnKeyPressNum(object? sender, KeyPressEventArgs e)
         {

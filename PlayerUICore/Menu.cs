@@ -30,43 +30,25 @@ namespace PlayerUI
         }
         private void customizeDesign()
         {
-            panelPacientesSubMenu.Visible = false;
-            panelPedidosSubMenu.Visible = false;
-            panelReactivosSubMenu.Visible = false;
-            panelUsuariosSubMenu.Visible = false;
-            panelParámetrosSubMenu.Visible = false;
-            panelVentasSubMenu.Visible = false;
-            panelInstrumentosSubMenu.Visible = false;
-            panel1.Visible = false;
-            panel2.Visible = false;
+            panelClientesSubMenu.Visible = false;
+            panelProductosSubMenu.Visible = false;
+            panelFacturaciónSubMenu.Visible = false;
+            panelEmpleadosSubMenu.Visible = false;
         }
 
         private void hideSubMenu()
         {
-            if (panelPacientesSubMenu.Visible == true)
-                panelPacientesSubMenu.Visible = false;
+            if (panelClientesSubMenu.Visible == true)
+                panelClientesSubMenu.Visible = false;
 
-            if (panelPedidosSubMenu.Visible == true)
-                panelPedidosSubMenu.Visible = false;
+            if (panelProductosSubMenu.Visible == true)
+                panelProductosSubMenu.Visible = false;
 
-            //if (//panelResultadosSubMenu.Visible == true)
-            //  panelResultadosSubMenu.Visible = false;
+            if (panelFacturaciónSubMenu.Visible == true)
+                panelFacturaciónSubMenu.Visible = false;
 
-            if (panelReactivosSubMenu.Visible == true)
-                panelReactivosSubMenu.Visible = false;
-
-            if (panelUsuariosSubMenu.Visible == true)
-                panelUsuariosSubMenu.Visible = false;
-
-            if (panelParámetrosSubMenu.Visible == true)
-                panelParámetrosSubMenu.Visible = false;
-
-            if (panelVentasSubMenu.Visible == true)
-                panelVentasSubMenu.Visible = false;
-
-            if (panelInstrumentosSubMenu.Visible == true)
-                panelInstrumentosSubMenu.Visible = false;
-
+            if (panelEmpleadosSubMenu.Visible == true)
+                panelEmpleadosSubMenu.Visible = false;
         }
 
         private void showSubMenu(Panel subMenu)
@@ -82,13 +64,13 @@ namespace PlayerUI
 
         private void btnMedia_Click(object sender, EventArgs e)
         {
-            showSubMenu(panelPacientesSubMenu);
+            showSubMenu(panelClientesSubMenu);
         }
 
         #region MediaSubMenu
         private void button2_Click(object sender, EventArgs e)
         {
-            openChildForm(new RegistrarPaciente());
+            openChildForm(new RegistrarCliente());
             //..
             //your codes
             //..
@@ -96,14 +78,14 @@ namespace PlayerUI
 
         private void button3_Click(object sender, EventArgs e)
         {
-            openChildForm(new ConsultarPaciente());
+            openChildForm(new ConsultarCliente());
 
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
 
-            openChildForm(new ActualizarPaciente());
+            openChildForm(new ActualizarCliente());
             
         }
 
@@ -112,7 +94,7 @@ namespace PlayerUI
 
         private void btnPlaylist_Click(object sender, EventArgs e)
         {
-            showSubMenu(panelPedidosSubMenu);
+            showSubMenu(panelProductosSubMenu);
         }
 
         #region PlayListManagemetSubMenu
@@ -213,54 +195,9 @@ namespace PlayerUI
         {
 
         }
-
-        private void button16_Click(object sender, EventArgs e)
-        {
-            openChildForm(new ModificarResul());
-        }
-
-        private void button21_Click(object sender, EventArgs e)
-        {
-            openChildForm(new RegistrarRea());
-        }
-
-        private void panelPacientesSubPacientes_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void btnReactivos_Click(object sender, EventArgs e)
-        {
-            showSubMenu(panelReactivosSubMenu);
-        }
-
-        private void btnInstrumentos_Click(object sender, EventArgs e)
-        {
-            showSubMenu(panelInstrumentosSubMenu);
-        }
-
-        private void btnVentas_Click(object sender, EventArgs e)
-        {
-            showSubMenu(panelVentasSubMenu);
-        }
-
-        private void btnUsuarios_Click(object sender, EventArgs e)
-        {
-            showSubMenu(panelUsuariosSubMenu);
-        }
-
         private void btnParámetros_Click(object sender, EventArgs e)
         {
-            if (usuario.tipoUsuario == "Jefe de laboratorio")
-            {
-                showSubMenu(panelParámetrosSubMenu);
-            }
-            else
-            {
-                MessageBox.Show("Solo el Jefe de laboratorio puede acceder a esta sección", "Usuario", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            }
-
+            showSubMenu(panelFacturaciónSubMenu);
         }
 
         private void pictureBox9_Click(object sender, EventArgs e)
@@ -276,7 +213,7 @@ namespace PlayerUI
 
         private void btnPaciente_Click(object sender, EventArgs e)
         {
-            showSubMenu(panelPacientesSubMenu);
+            showSubMenu(panelClientesSubMenu);
         }
 
 
@@ -390,50 +327,16 @@ namespace PlayerUI
 
         private void button13_Click_1(object sender, EventArgs e)
         {
-            if (usuario.tipoUsuario == "Jefe de laboratorio")
-            {
-                openChildForm(new ConsultarVentas());
-            }
-            else
-            {
-                MessageBox.Show("Solo el Jefe de laboratorio puede acceder a esta sección", "Usuario", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            }
-        }
-
-        private void button14_Click(object sender, EventArgs e)
-        {
-            penChildForm(new ConsultarInformeVentas());
-        }
-
-        private void button24_Click_1(object sender, EventArgs e)
-        {
-            openChildForm(new RegistrarUsuario());
-        }
-
-        private void button19_Click(object sender, EventArgs e)
-        {
-            openChildForm(new ConsultarUsuario());
-        }
-
-        private void button29_Click_1(object sender, EventArgs e)
-        {
-            openChildForm(new RegistrarIVA());
-        }
-
-        private void button28_Click(object sender, EventArgs e)
-        {
-            openChildForm(new ModificarIVA());
-        }
-
-        private void button5_Click_2(object sender, EventArgs e)
-        {
+            openChildForm(new ConsultarVentas());
+            MessageBox.Show("Solo el Jefe de laboratorio puede acceder a esta sección", "Usuario", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }
+
 
         private void button1_Click(object sender, EventArgs e)
         {
-            showSubMenu(panel3);
+            showSubMenu(panelEmpleadosSubMenu);
         }
     }
 }

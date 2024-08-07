@@ -104,7 +104,7 @@
             button9.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             button9.Size = new System.Drawing.Size(233, 40);
             button9.TabIndex = 2;
-            button9.Text = "Consultar Tipos de Examen";
+            button9.Text = "Consultar Empleado";
             button9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             button9.UseVisualStyleBackColor = true;
             // 
@@ -121,7 +121,7 @@
             button5.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             button5.Size = new System.Drawing.Size(233, 40);
             button5.TabIndex = 1;
-            button5.Text = "Registrar Tipo de Examen";
+            button5.Text = "Registrar Empleado";
             button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             button5.UseVisualStyleBackColor = true;
             button5.Click += button5_Click_1;
@@ -169,7 +169,7 @@
             button36.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             button36.Size = new System.Drawing.Size(233, 40);
             button36.TabIndex = 1;
-            button36.Text = "Consultar Tipos de Examen";
+            button36.Text = "Consultar Factura";
             button36.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             button36.UseVisualStyleBackColor = true;
             button36.Click += button36_Click;
@@ -187,7 +187,7 @@
             button37.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             button37.Size = new System.Drawing.Size(233, 40);
             button37.TabIndex = 0;
-            button37.Text = "Registrar Tipo de Examen";
+            button37.Text = "Registrar Factura";
             button37.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             button37.UseVisualStyleBackColor = true;
             button37.Click += button37_Click;

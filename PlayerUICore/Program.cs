@@ -16,7 +16,7 @@ namespace PlayerUI
         {
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Login());
+            Application.Run(new Menu());
         }
     }
 }

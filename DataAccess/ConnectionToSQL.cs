@@ -15,7 +15,7 @@ namespace DataAccess
 
         public ConnectionToSQL()
         {
-            strconn= "Data Source=.\\SQLEXPRESS;Initial Catalog=Requerimientos;Integrated Security=SSPI";
+            strconn= "Data Source=PCALEJO\\BDD;Initial Catalog=Requerimientos;Integrated Security=SSPI";
         }
         protected SqlConnection GetConnection() 
         { 

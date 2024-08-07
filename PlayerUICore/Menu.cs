@@ -22,10 +22,9 @@ namespace PlayerUI
     public partial class Menu : Form
     {
         User usuario = new User();
-        public Menu(User user)
+        public Menu()
         {
-            InitializeComponent(); 
-            usuario = user;
+            InitializeComponent();
             customizeDesign();
             hideSubMenu();
         }
@@ -38,8 +37,8 @@ namespace PlayerUI
             panelParámetrosSubMenu.Visible = false;
             panelVentasSubMenu.Visible = false;
             panelInstrumentosSubMenu.Visible = false;
-            panel1.Visible= false;
-            panel2.Visible= false;
+            panel1.Visible = false;
+            panel2.Visible = false;
         }
 
         private void hideSubMenu()
@@ -98,24 +97,14 @@ namespace PlayerUI
         private void button3_Click(object sender, EventArgs e)
         {
             openChildForm(new ConsultarPaciente());
-            //..
-            //your codes
-            //..
+
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            if(usuario.tipoUsuario == "Jefe de laboratorio") {
-                openChildForm(new ActualizarPaciente());
-            }
-            else
-            {
-                MessageBox.Show("Solo el Jefe de laboratorio puede acceder a esta sección", "Usuario", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            }
-            //..
-            //your codes
-            //..
+            openChildForm(new ActualizarPaciente());
+            
         }
 
 
@@ -262,7 +251,7 @@ namespace PlayerUI
 
         private void btnParámetros_Click(object sender, EventArgs e)
         {
-            if(usuario.tipoUsuario == "Jefe de laboratorio")
+            if (usuario.tipoUsuario == "Jefe de laboratorio")
             {
                 showSubMenu(panelParámetrosSubMenu);
             }
@@ -414,7 +403,7 @@ namespace PlayerUI
 
         private void button14_Click(object sender, EventArgs e)
         {
-            openChildForm(new ConsultarInformeVentas());
+            penChildForm(new ConsultarInformeVentas());
         }
 
         private void button24_Click_1(object sender, EventArgs e)
@@ -437,30 +426,14 @@ namespace PlayerUI
             openChildForm(new ModificarIVA());
         }
 
-        private void button5_Click_1(object sender, EventArgs e)
+        private void button5_Click_2(object sender, EventArgs e)
         {
-            if (usuario.tipoUsuario == "Jefe de laboratorio")
-            {
-                showSubMenu(panel1);
-            }
-            else
-            {
-                MessageBox.Show("Solo el Jefe de laboratorio puede acceder a esta sección", "Usuario", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            }
         }
 
-        private void button9_Click_2(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            if (usuario.tipoUsuario == "Jefe de laboratorio")
-            {
-                showSubMenu(panel2);
-            }
-            else
-            {
-                MessageBox.Show("Solo el Jefe de laboratorio puede acceder a esta sección", "Usuario", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            }
+            showSubMenu(panel3);
         }
     }
 }

@@ -86,7 +86,7 @@ namespace PlayerUI
         {
 
             openChildForm(new ActualizarCliente());
-            
+
         }
 
 
@@ -325,6 +325,11 @@ namespace PlayerUI
         private void button1_Click(object sender, EventArgs e)
         {
             showSubMenu(panelEmpleadosSubMenu);
+        }
+
+        private void button5_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

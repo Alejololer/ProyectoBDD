@@ -83,6 +83,7 @@ namespace PlayerUI.Pacientes
         private void llenarDataGridView()
         {
             string consulta = "Select * from Clientes";
+            coneccion = new SqlConnection("Data Source=PCALEJO\\BDD;Initial Catalog=MarujaGuayaquil;User ID=sa;Password=P@ssw0rd");
             SqlDataAdapter adapter = new SqlDataAdapter(consulta, coneccion);
             DataTable dt = new DataTable();
             adapter.Fill(dt);

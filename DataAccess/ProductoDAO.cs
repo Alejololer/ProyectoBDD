@@ -90,9 +90,9 @@ namespace DataAccess
                 {
                     command.Connection = connection;
                     command.CommandText = @"
-                INSERT INTO Productos(nombre, precio)
-                VALUES (@nombre, @precio);
-                SELECT SCOPE_IDENTITY();";
+                    INSERT INTO Productos(nombre, precio)
+                    VALUES (@nombre, @precio);
+                    SELECT SCOPE_IDENTITY();";
                     command.Parameters.AddWithValue("@nombre", nombre);
                     command.Parameters.AddWithValue("@precio", precio);
                     id = Convert.ToInt32(command.ExecuteScalar());

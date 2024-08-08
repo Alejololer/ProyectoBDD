@@ -48,24 +48,15 @@ namespace DataAccess
                 bool success = true;
                 foreach (DetalleFactura detalle in detalles)
                 {
-                    SqlCommand detalleCommand = new SqlCommand("INSERT INTO detalles_fac_2(numero_factura,id_producto,id_sucursal,unidades,precio_unitario)" +
-                        "values (@numero_factura, @id_producto, 2, @unidades, @precio_unitario)", connection);
-                    detalleCommand.CommandType = CommandType.StoredProcedure;
+                    command = new SqlCommand("sp_insert_v_det_facturas", connection);
+                    command.CommandType = CommandType.StoredProcedure;
 
-                    detalleCommand.Parameters.AddWithValue("@numero_factura", numero_factura);
-                    detalleCommand.Parameters.AddWithValue("@id_producto", detalle.id_producto);
-                    detalleCommand.Parameters.AddWithValue("@unidades", detalle.unidades);
-                    detalleCommand.Parameters.AddWithValue("@precio_unitario", detalle.precio_unitario);
-
-                    try
-                    {
-                        detalleCommand.ExecuteNonQuery();
-                    }
-                    catch (Exception)
-                    {
-                        success = false;
-                        break;
-                    }
+                    command.Parameters.AddWithValue("@numero_factura", numero_factura);
+                    command.Parameters.AddWithValue("@id_producto", detalle.id_producto);
+                    command.Parameters.AddWithValue("@id_sucursal", 2);
+                    command.Parameters.AddWithValue("@unidades", detalle.unidades);
+                    command.Parameters.AddWithValue("@precio_unitario", detalle.precio_unitario);
+                    command.ExecuteNonQuery();
                 }
 
                 return success;

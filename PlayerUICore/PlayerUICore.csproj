@@ -29,7 +29,16 @@
     <ProjectReference Include="..\Domain\Domain.csproj" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Empleados\AñadirTelefonoEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Parametros\AñadirDetalleFactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Empleados\RegistrarEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Empleados\ConsultarEmpleados.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Productos\ActualizarProducto.cs">

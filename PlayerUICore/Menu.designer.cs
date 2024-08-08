@@ -107,6 +107,7 @@
             button9.Text = "Consultar Empleado";
             button9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             button9.UseVisualStyleBackColor = true;
+            button9.Click += button9_Click_1;
             // 
             // button5
             // 

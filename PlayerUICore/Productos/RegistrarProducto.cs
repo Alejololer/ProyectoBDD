@@ -1,7 +1,6 @@
 ﻿using DataAccess;
 using DataAccess.Entities;
 using Domain;
-using PlayerUICore.Usuario;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,10 +17,6 @@ namespace PlayerUI.Pedidos
 {
     public partial class RegistrarProducto : Form
     {
-        Cliente Cliente = null;
-        Pedido pedido = null;
-        BindingList<TipoExamen> tiposExamenPedido = null;
-        List<TipoExamen> tipoExamens = new List<TipoExamen>();
         public RegistrarProducto()
         {
             InitializeComponent();

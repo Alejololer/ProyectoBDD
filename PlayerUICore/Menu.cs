@@ -8,20 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DataAccess.Entities;
-using PlayerUI.Instrumento;
 using PlayerUI.Pacientes;
 using PlayerUI.Parametros;
 using PlayerUI.Pedidos;
-using PlayerUI.Reactivos;
-using PlayerUI.Resultados;
-using PlayerUI.Usuario;
-using PlayerUI.Ventas;
+
 
 namespace PlayerUI
 {
     public partial class Menu : Form
     {
-        User usuario = new User();
         public Menu()
         {
             InitializeComponent();
@@ -198,71 +193,13 @@ namespace PlayerUI
 
         }
 
-        private void button27_Click(object sender, EventArgs e)
-        {
-            openChildForm(new RegistrarInstrumento());
 
-        }
 
         private void btnPaciente_Click(object sender, EventArgs e)
         {
             showSubMenu(panelClientesSubMenu);
         }
 
-
-
-        private void button17_Click(object sender, EventArgs e)
-        {
-            openChildForm(new ConsultarResul());
-        }
-
-
-        private void button18_Click(object sender, EventArgs e)
-        {
-            openChildForm(new RegistrarResul());
-        }
-
-        private void button20_Click(object sender, EventArgs e)
-        {
-            openChildForm(new ConsultarRea());
-        }
-
-        private void button15_Click(object sender, EventArgs e)
-        {
-            openChildForm(new ModificarRea());
-        }
-
-        private void button22_Click(object sender, EventArgs e)
-        {
-            openChildForm(new EliminarReactivo());
-        }
-
-
-
-        private void button26_Click(object sender, EventArgs e)
-        {
-            openChildForm(new ConsultarInstrumento());
-        }
-
-        private void button25_Click(object sender, EventArgs e)
-        {
-            openChildForm(new ActualizarInstrumento());
-        }
-
-        private void button23_Click(object sender, EventArgs e)
-        {
-            openChildForm(new EliminarInstrumento());
-        }
-
-        private void button29_Click(object sender, EventArgs e)
-        {
-            openChildForm(new ConsultarInformeVentas());
-        }
-
-        private void button33_Click(object sender, EventArgs e)
-        {
-            openChildForm(new GenerarVenta(usuario));
-        }
 
 
 
@@ -279,48 +216,13 @@ namespace PlayerUI
 
         private void button37_Click(object sender, EventArgs e)
         {
-            openChildForm(new RegistrarTipoExamen());
+            openChildForm(new RegistrarFactura());
         }
-
-        private void button36_Click(object sender, EventArgs e)
-        {
-            openChildForm(new ConsultarTipoExamen());
-        }
-
 
         private void panelLogo_Paint(object sender, PaintEventArgs e)
         {
 
         }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            openChildForm(new ModificarIVA());
-        }
-
-        private void button9_Click_1(object sender, EventArgs e)
-        {
-            openChildForm(new RegistrarIVA());
-        }
-
-        private void button10_Click_1(object sender, EventArgs e)
-        {
-            openChildForm(new GenerarResul());
-        }
-
-        private void button12_Click_1(object sender, EventArgs e)
-        {
-            openChildForm(new ConsultarVentas());
-        }
-
-        private void button13_Click_1(object sender, EventArgs e)
-        {
-
-            openChildForm(new ConsultarVentas());
-            MessageBox.Show("Solo el Jefe de laboratorio puede acceder a esta sección", "Usuario", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-        }
-
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -329,7 +231,17 @@ namespace PlayerUI
 
         private void button5_Click_1(object sender, EventArgs e)
         {
+            openChildForm(new RegistrarEmpleado());
+        }
 
+        private void button36_Click(object sender, EventArgs e)
+        {
+            openChildForm(new ConsultarFacturas());
+        }
+
+        private void button9_Click_1(object sender, EventArgs e)
+        {
+            openChildForm(new ConsultarEmpleados());
         }
     }
 }

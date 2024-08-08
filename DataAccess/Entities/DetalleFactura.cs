@@ -13,13 +13,6 @@ namespace DataAccess.Entities
         public int unidades { get; set; }
         public float precio_unitario { get; set; }
         public string nombre_producto { get; set; }
-        public DetalleFactura(int numero_factura, int id_producto, int unidades, float precio_unitario)
-        {
-            this.numero_factura = numero_factura;
-            this.id_producto = id_producto;
-            this.unidades = unidades;
-            this.precio_unitario = precio_unitario;
-        }
 
         public DetalleFactura(string nombre, int id_producto, int unidades, float precio_unitario)
         {

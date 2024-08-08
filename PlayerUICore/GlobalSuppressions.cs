@@ -5,4 +5,4 @@
 
 using System.Diagnostics.CodeAnalysis;
 
-[assembly: SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "<Pending>", Scope = "member", Target = "~M:PlayerUI.Parametros.RegistrarTipoExamen.button9_Click(System.Object,System.EventArgs)")]
+[assembly: SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "<Pending>", Scope = "member", Target = "~M:PlayerUI.Parametros.RegistrarFactura.button9_Click(System.Object,System.EventArgs)")]

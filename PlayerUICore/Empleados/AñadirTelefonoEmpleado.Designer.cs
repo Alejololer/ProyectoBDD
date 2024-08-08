@@ -1,6 +1,6 @@
 ﻿namespace PlayerUI.Pacientes
 {
-    partial class AñadirDetalleFactura
+    partial class AñadirTelefonoEmpleado
     {
         /// <summary>
         /// Required designer variable.
@@ -32,11 +32,9 @@
             label1 = new System.Windows.Forms.Label();
             btnExit = new System.Windows.Forms.Button();
             label7 = new System.Windows.Forms.Label();
-            txtPrecio = new System.Windows.Forms.TextBox();
+            txtTipo = new System.Windows.Forms.TextBox();
             label10 = new System.Windows.Forms.Label();
-            txtNom = new System.Windows.Forms.TextBox();
-            txtStock = new System.Windows.Forms.TextBox();
-            label6 = new System.Windows.Forms.Label();
+            txtNum = new System.Windows.Forms.TextBox();
             SuspendLayout();
             // 
             // button1
@@ -47,7 +45,7 @@
             button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             button1.ForeColor = System.Drawing.Color.LightGray;
-            button1.Location = new System.Drawing.Point(501, 345);
+            button1.Location = new System.Drawing.Point(501, 276);
             button1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             button1.Name = "button1";
             button1.Size = new System.Drawing.Size(104, 38);
@@ -91,23 +89,23 @@
             label7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             label7.ForeColor = System.Drawing.SystemColors.Control;
-            label7.Location = new System.Drawing.Point(112, 207);
+            label7.Location = new System.Drawing.Point(97, 207);
             label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             label7.Name = "label7";
-            label7.Size = new System.Drawing.Size(105, 17);
+            label7.Size = new System.Drawing.Size(120, 17);
             label7.TabIndex = 64;
-            label7.Text = "Precio Unitario:";
+            label7.Text = "Tipo de Telefono:";
             // 
-            // txtPrecio
+            // txtTipo
             // 
-            txtPrecio.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            txtPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            txtPrecio.Location = new System.Drawing.Point(240, 198);
-            txtPrecio.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            txtPrecio.MaxLength = 10;
-            txtPrecio.Name = "txtPrecio";
-            txtPrecio.Size = new System.Drawing.Size(365, 26);
-            txtPrecio.TabIndex = 62;
+            txtTipo.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            txtTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            txtTipo.Location = new System.Drawing.Point(240, 198);
+            txtTipo.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            txtTipo.MaxLength = 10;
+            txtTipo.Name = "txtTipo";
+            txtTipo.Size = new System.Drawing.Size(365, 26);
+            txtTipo.TabIndex = 62;
             // 
             // label10
             // 
@@ -115,66 +113,40 @@
             label10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             label10.ForeColor = System.Drawing.SystemColors.Control;
-            label10.Location = new System.Drawing.Point(76, 135);
+            label10.Location = new System.Drawing.Point(80, 135);
             label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             label10.Name = "label10";
-            label10.Size = new System.Drawing.Size(145, 17);
+            label10.Size = new System.Drawing.Size(137, 17);
             label10.TabIndex = 60;
-            label10.Text = "Nombre del producto:";
+            label10.Text = "Numero de telefono:";
             // 
-            // txtNom
+            // txtNum
             // 
-            txtNom.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            txtNom.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            txtNom.Location = new System.Drawing.Point(240, 126);
-            txtNom.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            txtNom.MaxLength = 30;
-            txtNom.Name = "txtNom";
-            txtNom.Size = new System.Drawing.Size(365, 26);
-            txtNom.TabIndex = 58;
+            txtNum.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            txtNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            txtNum.Location = new System.Drawing.Point(240, 126);
+            txtNum.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            txtNum.MaxLength = 10;
+            txtNum.Name = "txtNum";
+            txtNum.Size = new System.Drawing.Size(365, 26);
+            txtNum.TabIndex = 58;
             // 
-            // txtStock
-            // 
-            txtStock.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            txtStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            txtStock.Location = new System.Drawing.Point(240, 271);
-            txtStock.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            txtStock.MaxLength = 30;
-            txtStock.Name = "txtStock";
-            txtStock.Size = new System.Drawing.Size(365, 26);
-            txtStock.TabIndex = 63;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            label6.ForeColor = System.Drawing.SystemColors.Control;
-            label6.Location = new System.Drawing.Point(145, 280);
-            label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            label6.Name = "label6";
-            label6.Size = new System.Drawing.Size(72, 17);
-            label6.TabIndex = 65;
-            label6.Text = "Unidades:";
-            // 
-            // AñadirDetalleFactura
+            // AñadirTelefonoEmpleado
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.FromArgb(32, 30, 45);
             ClientSize = new System.Drawing.Size(700, 600);
-            Controls.Add(label6);
             Controls.Add(label7);
-            Controls.Add(txtStock);
-            Controls.Add(txtPrecio);
+            Controls.Add(txtTipo);
             Controls.Add(label10);
-            Controls.Add(txtNom);
+            Controls.Add(txtNum);
             Controls.Add(button1);
             Controls.Add(label1);
             Controls.Add(btnExit);
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            Name = "AñadirDetalleFactura";
+            Name = "AñadirTelefonoEmpleado";
             Text = "ActualizarPaciente";
             Load += ActualizarPaciente_Load;
             ResumeLayout(false);
@@ -187,10 +159,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtPrecio;
+        private System.Windows.Forms.TextBox txtTipo;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox txtNom;
-        private System.Windows.Forms.TextBox txtStock;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtNum;
     }
 }

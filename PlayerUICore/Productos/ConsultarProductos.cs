@@ -22,7 +22,6 @@ namespace PlayerUI.Pedidos
         {
             InitializeComponent();
             llenarDGV();
-            TipoExamenModel tipoExamen = new TipoExamenModel();
             txtNombre.KeyPress += OnKeyPress;
         }
 

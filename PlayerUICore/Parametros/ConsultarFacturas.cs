@@ -120,7 +120,7 @@ namespace PlayerUI.Parametros
             try
             {
                 string connectionString = "Data Source=PCALEJO\\BDD;Initial Catalog=MarujaGuayaquil;User ID=sa;Password=P@ssw0rd";
-                string query = "SELECT * FROM detalles_fac_2 where numero_factura = @id";
+                string query = "SELECT * FROM v_det_factura where numero_factura = @id";
                 using (var connection = new SqlConnection(connectionString))
                 {
                     using (var consulta = new SqlCommand(query, connection))

@@ -16,11 +16,10 @@ namespace PlayerUI.Parametros
 {
     public partial class ConsultarTipoExamen : Form
     {
-        TipoExamen tipoExamen = null;
         public ConsultarTipoExamen()
         {
             InitializeComponent();
-            txtNomTipo.KeyPress += OnKeyPress;
+            txtID.KeyPress += OnKeyPressNum;
             llenarDataGridViewTodo();
         }
 
@@ -34,29 +33,12 @@ namespace PlayerUI.Parametros
         {
 
         }
-
-        private bool obtenerPrecio()
-        {
-            if (txtNomTipo.Text.Length <= 1)
-            {
-                MessageBox.Show("Nombre de Tipo de examen inválido!", "Modificar precio Tipo de Examen", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return false;
-            }
-            TipoExamenModel model = new TipoExamenModel();
-            if (!model.Check(txtNomTipo.Text))
-            {
-                MessageBox.Show("Tipo de examen no encontrado!", "Modificar precio Tipo de Examen", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return false;
-            }
-            tipoExamen = model.GetTipoExamen(txtNomTipo.Text);
-            return true;
-        }
         private void llenarDataGridViewTodo()
         {
             try
             {
-                string connectionString = "Data Source=.\\SQLEXPRESS;Initial Catalog=Requerimientos;Integrated Security=SSPI";
-                string query = "SELECT * FROM TIPOSEXAMEN";
+                string connectionString = "Data Source=PCALEJO\\BDD;Initial Catalog=MarujaGuayaquil;User ID=sa;Password=P@ssw0rd";
+                string query = "SELECT * FROM v_facturas";
                 using (var connection = new SqlConnection(connectionString))
                 {
                     using (var consulta = new SqlCommand(query, connection))
@@ -69,18 +51,19 @@ namespace PlayerUI.Parametros
                             adapter.Fill(dt);
                             //formato
                             dataGridView1.DataSource = dt;
-                            dataGridView1.Columns[0].HeaderText = "ID";
-                            dataGridView1.Columns[0].Width = 50;
-                            dataGridView1.Columns[1].HeaderText = "Nombre";
-                            dataGridView1.Columns[1].Width = 400;
-                            dataGridView1.Columns[2].HeaderText = "Costo";
-                            dataGridView1.Columns[2].Width = 150;
-                            dataGridView1.Columns[2].DefaultCellStyle.Format = "N2";
+                            dataGridView1.Columns[0].HeaderText = "Número Factura";
+                            dataGridView1.Columns[0].Width = 100;
+                            dataGridView1.Columns[1].HeaderText = "Fecha";
+                            dataGridView1.Columns[1].Width = 100;
+                            dataGridView1.Columns[2].HeaderText = "Total";
+                            dataGridView1.Columns[2].Width = 100;
+                            dataGridView1.Columns[3].HeaderText = "ID Sucursal";
+                            dataGridView1.Columns[3].Width = 50;
+                            dataGridView1.Columns[4].HeaderText = "Cedula Empleado";
+                            dataGridView1.Columns[4].Width = 100;
+                            dataGridView1.Columns[5].HeaderText = "Cedula Cliente";
+                            dataGridView1.Columns[5].Width = 100;
 
-                            if (dt.Rows.Count == 0)
-                            {
-                                MessageBox.Show("No se encontraron parámetros para este tipo de examen!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            }
                         }
                     }
                 }
@@ -90,18 +73,17 @@ namespace PlayerUI.Parametros
                 MessageBox.Show($"Error al llenar el DataGridView: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        private void llenarDataGridView1(string nombreTipo)
+        private void llenarDataGridView1(int id)
         {
             try
             {
-                string connectionString = "Data Source=.\\SQLEXPRESS;Initial Catalog=Requerimientos;Integrated Security=SSPI";
-                string query = "SELECT * FROM TIPOSEXAMEN WHERE NOMBRETIPOEXAMEN = @nombreTipo";
+                string connectionString = "Data Source=PCALEJO\\BDD;Initial Catalog=MarujaGuayaquil;User ID=sa;Password=P@ssw0rd";
+                string query = "SELECT * FROM v_facturas where numero_factura = @id";
                 using (var connection = new SqlConnection(connectionString))
                 {
                     using (var consulta = new SqlCommand(query, connection))
                     {
-                        consulta.Parameters.AddWithValue("@nombreTipo", nombreTipo);
-
+                        consulta.Parameters.AddWithValue("@id", id);
                         connection.Open();
 
                         using (SqlDataAdapter adapter = new SqlDataAdapter(consulta))
@@ -110,18 +92,19 @@ namespace PlayerUI.Parametros
                             adapter.Fill(dt);
                             //formato
                             dataGridView1.DataSource = dt;
-                            dataGridView1.Columns[0].HeaderText = "ID";
-                            dataGridView1.Columns[0].Width = 50;
-                            dataGridView1.Columns[1].HeaderText = "Nombre";
-                            dataGridView1.Columns[1].Width = 400;
-                            dataGridView1.Columns[2].HeaderText = "Costo";
-                            dataGridView1.Columns[2].Width = 150;
-                            dataGridView1.Columns[2].DefaultCellStyle.Format = "N2";
+                            dataGridView1.Columns[0].HeaderText = "Número Factura";
+                            dataGridView1.Columns[0].Width = 100;
+                            dataGridView1.Columns[1].HeaderText = "Fecha";
+                            dataGridView1.Columns[1].Width = 100;
+                            dataGridView1.Columns[2].HeaderText = "Total";
+                            dataGridView1.Columns[2].Width = 100;
+                            dataGridView1.Columns[3].HeaderText = "ID Sucursal";
+                            dataGridView1.Columns[3].Width = 50;
+                            dataGridView1.Columns[4].HeaderText = "Cedula Empleado";
+                            dataGridView1.Columns[4].Width = 125;
+                            dataGridView1.Columns[5].HeaderText = "Cedula Cliente";
+                            dataGridView1.Columns[5].Width = 125;
 
-                            if (dt.Rows.Count == 0)
-                            {
-                                MessageBox.Show("No se encontraron parámetros para este tipo de examen!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            }
                         }
                     }
                 }
@@ -130,21 +113,19 @@ namespace PlayerUI.Parametros
             {
                 MessageBox.Show($"Error al llenar el DataGridView: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            
         }
-        private void llenarDataGridView2()
+        private void llenarDataGridView2(int id)
         {
             try
             {
-                string connectionString = "Data Source=.\\SQLEXPRESS;Initial Catalog=Requerimientos;Integrated Security=SSPI";
-                string query = "SELECT p.IDPARAMETRO, NOMBREPARAMETRO, MINPARAMETRO, MAXPARAMETRO, UNIDADPARAMETRO" +
-                    " FROM TIPOSEXAMEN te JOIN TIPOEXAMEN_PARAMETRO tep ON te.IDTIPOEXAMEN = tep.IDTIPOEXAMEN" +
-                    " JOIN PARAMETROSTIPOEXAMEN p ON tep.IDPARAMETRO = p.IDPARAMETRO WHERE te.IDTIPOEXAMEN = @id";
+                string connectionString = "Data Source=PCALEJO\\BDD;Initial Catalog=MarujaGuayaquil;User ID=sa;Password=P@ssw0rd";
+                string query = "SELECT * FROM detalles_factura_2 where numero_factura = @id";
                 using (var connection = new SqlConnection(connectionString))
                 {
                     using (var consulta = new SqlCommand(query, connection))
                     {
-                        consulta.Parameters.AddWithValue("@id", tipoExamen.Id);
-
+                        consulta.Parameters.AddWithValue("@id", id);
                         connection.Open();
 
                         using (SqlDataAdapter adapter = new SqlDataAdapter(consulta))
@@ -152,22 +133,20 @@ namespace PlayerUI.Parametros
                             DataTable dt = new DataTable();
                             adapter.Fill(dt);
                             //formato
-                            dgvTipoExamen.DataSource = dt;
-                            dgvTipoExamen.Columns[0].HeaderText = "ID";
-                            dgvTipoExamen.Columns[0].Width = 50;
-                            dgvTipoExamen.Columns[1].HeaderText = "Nombre";
-                            dgvTipoExamen.Columns[1].Width = 100;
-                            dgvTipoExamen.Columns[2].HeaderText = "Minimo Rango Normal";
-                            dgvTipoExamen.Columns[2].Width = 175;
-                            dgvTipoExamen.Columns[3].HeaderText = "Maximo Rango Normal";
-                            dgvTipoExamen.Columns[3].Width = 175;
-                            dgvTipoExamen.Columns[4].HeaderText = "Unidad";
-                            dgvTipoExamen.Columns[4].Width = 100;
+                            dataGridView1.DataSource = dt;
+                            dataGridView1.Columns[0].HeaderText = "ID Detalle";
+                            dataGridView1.Columns[0].Width = 50;
+                            dataGridView1.Columns[1].HeaderText = "Numero Factura";
+                            dataGridView1.Columns[1].Width = 50;
+                            dataGridView1.Columns[2].HeaderText = "ID Producto";
+                            dataGridView1.Columns[2].Width = 50;
+                            dataGridView1.Columns[3].HeaderText = "ID Sucursal";
+                            dataGridView1.Columns[3].Width = 50;
+                            dataGridView1.Columns[4].HeaderText = "Unidades";
+                            dataGridView1.Columns[4].Width = 100;
+                            dataGridView1.Columns[5].HeaderText = "Precio unitario";
+                            dataGridView1.Columns[5].Width = 100;
 
-                            if (dt.Rows.Count == 0)
-                            {
-                                MessageBox.Show("No se encontraron parámetros para este tipo de examen!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            }
                         }
                     }
                 }
@@ -184,33 +163,23 @@ namespace PlayerUI.Parametros
             {
                 DataGridViewRow filaSeleccionada = dataGridView1.SelectedRows[0];
                 DataGridViewCell celda = filaSeleccionada.Cells[0];
-                DataGridViewCell celda1 = filaSeleccionada.Cells[1];
-                DataGridViewCell celda2 = filaSeleccionada.Cells[2];
                 int id = (int)celda.Value;
-                string nombre = (string)celda1.Value;
-                decimal costo = (decimal)celda2.Value;
-                tipoExamen = new TipoExamen(id, nombre, costo);
-                llenarDataGridView2();
+                llenarDataGridView2(id);
             }
             else
             {
-                MessageBox.Show("Primero debe seleccionar un tipo de examen!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Primero debe seleccionar una factura!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
         }
 
-        private void OnKeyPress(object? sender, KeyPressEventArgs e)
+        private void OnKeyPressNum(object? sender, KeyPressEventArgs e)
         {
             e.Handled = e.KeyChar switch
             {
                 >= '0' and <= '9' => false, // allow numerics
-                >= 'a' and <= 'z' => false, // allow lowercase characters
-                >= 'A' and <= 'Z' => false, // allow uppercase characters
                 '\b' => false,              // allow backspace
-                '-' => false,
-                '/' => false,
-                ' ' => false,
                 _ => true
             };
         }
@@ -234,32 +203,24 @@ namespace PlayerUI.Parametros
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (obtenerPrecio())
+            if(txtID.Text.Equals(""))
             {
-                llenarDataGridView1(txtNomTipo.Text);
-            }
-        }
-
-        private void button9_Click(object sender, EventArgs e)
-        {
-            if (dataGridView1.SelectedRows.Count > 0)
-            {
-                DataGridViewRow filaSeleccionada = dataGridView1.SelectedRows[0];
-                DataGridViewCell celda = filaSeleccionada.Cells[0];
-                DataGridViewCell celda1 = filaSeleccionada.Cells[1];
-                DataGridViewCell celda2 = filaSeleccionada.Cells[2];
-                int id = (int)celda.Value;
-                string nombre = (string)celda1.Value;
-                decimal costo = (decimal)celda2.Value;
-                tipoExamen = new TipoExamen(id, nombre, costo);
-                ModificarPrecio modificarPrecio = new ModificarPrecio(tipoExamen);
-                modificarPrecio.Show();
-            }
-            else
-            {
-                MessageBox.Show("Primero debe seleccionar un tipo de examen!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                llenarDataGridViewTodo();
+                dgvTipoExamen.DataSource = null;
+                dgvTipoExamen.Rows.Clear();
+                dgvTipoExamen.Columns.Clear();
                 return;
             }
+            FacturaModel facturaModel = new FacturaModel();
+
+            if (!facturaModel.Check(int.Parse(txtID.Text)))
+            {
+                MessageBox.Show("No se encontro una factura con este numero", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            llenarDataGridView1(int.Parse(txtID.Text));
         }
+
+        
     }
 }

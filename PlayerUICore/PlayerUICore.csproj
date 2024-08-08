@@ -29,6 +29,9 @@
     <ProjectReference Include="..\Domain\Domain.csproj" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Parametros\AñadirDetalleFactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Productos\ActualizarProducto.cs">
       <SubType>Form</SubType>
     </Compile>

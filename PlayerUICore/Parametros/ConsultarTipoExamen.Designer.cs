@@ -33,11 +33,10 @@
             button2 = new System.Windows.Forms.Button();
             dgvTipoExamen = new System.Windows.Forms.DataGridView();
             label2 = new System.Windows.Forms.Label();
-            txtNomTipo = new System.Windows.Forms.TextBox();
+            txtID = new System.Windows.Forms.TextBox();
             label4 = new System.Windows.Forms.Label();
             dataGridView1 = new System.Windows.Forms.DataGridView();
             button1 = new System.Windows.Forms.Button();
-            button9 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)dgvTipoExamen).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
@@ -48,12 +47,12 @@
             label1.AutoSize = true;
             label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             label1.ForeColor = System.Drawing.Color.FromArgb(235, 42, 83);
-            label1.Location = new System.Drawing.Point(195, 29);
+            label1.Location = new System.Drawing.Point(259, 14);
             label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(310, 25);
+            label1.Size = new System.Drawing.Size(177, 25);
             label1.TabIndex = 7;
-            label1.Text = "CONSULTAR TIPO DE EXAMEN";
+            label1.Text = "Consultar Facturas";
             // 
             // btnExit
             // 
@@ -84,7 +83,7 @@
             button2.Name = "button2";
             button2.Size = new System.Drawing.Size(175, 46);
             button2.TabIndex = 30;
-            button2.Text = "Consultar Parámetros";
+            button2.Text = "Consultar Detalles";
             button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;
             // 
@@ -109,22 +108,22 @@
             label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             label2.ForeColor = System.Drawing.Color.LightGray;
-            label2.Location = new System.Drawing.Point(35, 81);
+            label2.Location = new System.Drawing.Point(140, 81);
             label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(191, 17);
+            label2.Size = new System.Drawing.Size(77, 17);
             label2.TabIndex = 26;
-            label2.Text = "Nombre del Tipo de Examen:";
+            label2.Text = "ID Factura:";
             label2.Click += label2_Click;
             // 
-            // txtNomTipo
+            // txtID
             // 
-            txtNomTipo.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            txtNomTipo.Location = new System.Drawing.Point(239, 80);
-            txtNomTipo.Margin = new System.Windows.Forms.Padding(2);
-            txtNomTipo.Name = "txtNomTipo";
-            txtNomTipo.Size = new System.Drawing.Size(413, 23);
-            txtNomTipo.TabIndex = 25;
+            txtID.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            txtID.Location = new System.Drawing.Point(239, 80);
+            txtID.Margin = new System.Windows.Forms.Padding(2);
+            txtID.Name = "txtID";
+            txtID.Size = new System.Drawing.Size(413, 23);
+            txtID.TabIndex = 25;
             // 
             // label4
             // 
@@ -132,12 +131,12 @@
             label4.AutoSize = true;
             label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             label4.ForeColor = System.Drawing.Color.FromArgb(235, 42, 83);
-            label4.Location = new System.Drawing.Point(34, 340);
+            label4.Location = new System.Drawing.Point(35, 339);
             label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             label4.Name = "label4";
-            label4.Size = new System.Drawing.Size(152, 25);
+            label4.Size = new System.Drawing.Size(82, 25);
             label4.TabIndex = 33;
-            label4.Text = "PARÁMETROS";
+            label4.Text = "Detalles";
             // 
             // dataGridView1
             // 
@@ -169,37 +168,19 @@
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
-            // button9
-            // 
-            button9.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right;
-            button9.BackColor = System.Drawing.Color.FromArgb(235, 42, 83);
-            button9.FlatAppearance.BorderSize = 0;
-            button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            button9.ForeColor = System.Drawing.Color.LightGray;
-            button9.Location = new System.Drawing.Point(35, 529);
-            button9.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            button9.Name = "button9";
-            button9.Size = new System.Drawing.Size(175, 46);
-            button9.TabIndex = 36;
-            button9.Text = "Modificar Costo";
-            button9.UseVisualStyleBackColor = false;
-            button9.Click += button9_Click;
-            // 
             // ConsultarTipoExamen
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.FromArgb(32, 30, 45);
             ClientSize = new System.Drawing.Size(700, 600);
-            Controls.Add(button9);
             Controls.Add(button1);
             Controls.Add(dataGridView1);
             Controls.Add(label4);
             Controls.Add(button2);
             Controls.Add(dgvTipoExamen);
             Controls.Add(label2);
-            Controls.Add(txtNomTipo);
+            Controls.Add(txtID);
             Controls.Add(btnExit);
             Controls.Add(label1);
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -219,10 +200,9 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DataGridView dgvTipoExamen;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtNomTipo;
+        private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button9;
     }
 }

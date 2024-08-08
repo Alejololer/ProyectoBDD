@@ -16,6 +16,15 @@ namespace Domain
         {
             return productoDAO.CheckLocal(id); 
         }
+
+        public int CheckNombre(string Nombre)
+        {
+            return productoDAO.CheckNombre(Nombre);
+        }
+        public bool CheckStock(int id, int cantidad)
+        {
+            return productoDAO.CheckStock(id, cantidad);
+        }
         public bool actualizarProductoStockExiste(int id, int stock)
         {
             return productoDAO.actualizarProductoStockExiste(id, stock);

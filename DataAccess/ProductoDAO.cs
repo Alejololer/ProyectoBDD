@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -27,6 +28,33 @@ namespace DataAccess
                     }
                     else
                         return false;
+                }
+            }
+        }
+
+        public int CheckNombre(string nombre)
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "Select id_producto from Productos where nombre=@nombre";
+                    command.Parameters.AddWithValue("@nombre", nombre);
+                    command.CommandType = System.Data.CommandType.Text;
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.HasRows)
+                        {
+                            reader.Read();
+                            return reader.GetInt32(0);
+                        }
+                        else
+                        {
+                            return 0;
+                        }
+                    }
                 }
             }
         }
@@ -152,6 +180,39 @@ namespace DataAccess
                     if (filasAfectadas > 0)
                     {
                         return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+            }
+        }
+
+        public bool CheckStock(int id, int cantidad)
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "SELECT stock_sucursalG FROM Productos_2 WHERE id_producto = @id";
+                    command.Parameters.AddWithValue("@id", id);
+                    command.CommandType = System.Data.CommandType.Text;
+                    SqlDataReader reader = command.ExecuteReader();
+                    if (reader.HasRows)
+                    {
+                        reader.Read();
+                        int stock = reader.GetInt32(0);
+                        if (stock < cantidad)
+                        {
+                            return false;
+                        }
+                        else
+                        {
+                            return true;
+                        }
                     }
                     else
                     {

@@ -31,10 +31,17 @@
             label1 = new System.Windows.Forms.Label();
             btnExit = new System.Windows.Forms.Button();
             button9 = new System.Windows.Forms.Button();
-            txtNomTipo = new System.Windows.Forms.TextBox();
+            txtCedCli = new System.Windows.Forms.TextBox();
             label2 = new System.Windows.Forms.Label();
+            dataGridView1 = new System.Windows.Forms.DataGridView();
             label3 = new System.Windows.Forms.Label();
-            txtCostoTipo = new System.Windows.Forms.TextBox();
+            txtCedEmp = new System.Windows.Forms.TextBox();
+            label4 = new System.Windows.Forms.Label();
+            label5 = new System.Windows.Forms.Label();
+            txtTotal = new System.Windows.Forms.TextBox();
+            button1 = new System.Windows.Forms.Button();
+            button2 = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -43,12 +50,12 @@
             label1.AutoSize = true;
             label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             label1.ForeColor = System.Drawing.Color.FromArgb(235, 42, 83);
-            label1.Location = new System.Drawing.Point(201, 29);
+            label1.Location = new System.Drawing.Point(288, 18);
             label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(299, 25);
+            label1.Size = new System.Drawing.Size(160, 25);
             label1.TabIndex = 7;
-            label1.Text = "REGISTRAR TIPO DE EXAMEN";
+            label1.Text = "Registrar Factura";
             // 
             // btnExit
             // 
@@ -74,25 +81,25 @@
             button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             button9.ForeColor = System.Drawing.Color.LightGray;
-            button9.Location = new System.Drawing.Point(498, 334);
+            button9.Location = new System.Drawing.Point(541, 476);
             button9.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             button9.Name = "button9";
-            button9.Size = new System.Drawing.Size(175, 46);
+            button9.Size = new System.Drawing.Size(132, 46);
             button9.TabIndex = 15;
             button9.Text = "Registrar";
             button9.UseVisualStyleBackColor = false;
             button9.Click += button9_Click;
             // 
-            // txtNomTipo
+            // txtCedCli
             // 
-            txtNomTipo.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            txtNomTipo.Location = new System.Drawing.Point(259, 221);
-            txtNomTipo.Margin = new System.Windows.Forms.Padding(2);
-            txtNomTipo.MaxLength = 30;
-            txtNomTipo.Name = "txtNomTipo";
-            txtNomTipo.Size = new System.Drawing.Size(413, 23);
-            txtNomTipo.TabIndex = 19;
-            txtNomTipo.TextChanged += txtNomTipo_TextChanged;
+            txtCedCli.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            txtCedCli.Location = new System.Drawing.Point(302, 78);
+            txtCedCli.Margin = new System.Windows.Forms.Padding(2);
+            txtCedCli.MaxLength = 30;
+            txtCedCli.Name = "txtCedCli";
+            txtCedCli.Size = new System.Drawing.Size(371, 23);
+            txtCedCli.TabIndex = 19;
+            txtCedCli.TextChanged += txtNomTipo_TextChanged;
             // 
             // label2
             // 
@@ -100,12 +107,20 @@
             label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             label2.ForeColor = System.Drawing.Color.LightGray;
-            label2.Location = new System.Drawing.Point(24, 227);
+            label2.Location = new System.Drawing.Point(25, 84);
             label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(191, 17);
+            label2.Size = new System.Drawing.Size(208, 17);
             label2.TabIndex = 20;
-            label2.Text = "Nombre del Tipo de Examen:";
+            label2.Text = "Cédula de Identidad del Cliente:";
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new System.Drawing.Point(25, 216);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.Size = new System.Drawing.Size(648, 180);
+            dataGridView1.TabIndex = 21;
             // 
             // label3
             // 
@@ -113,22 +128,92 @@
             label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             label3.ForeColor = System.Drawing.Color.LightGray;
-            label3.Location = new System.Drawing.Point(24, 284);
+            label3.Location = new System.Drawing.Point(25, 130);
             label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(236, 17);
-            label3.TabIndex = 49;
-            label3.Text = "Costo del Tipo de Examen (Sin IVA):";
+            label3.Size = new System.Drawing.Size(228, 17);
+            label3.TabIndex = 22;
+            label3.Text = "Cédula de Identidad del Empleado:";
             // 
-            // txtCostoTipo
+            // txtCedEmp
             // 
-            txtCostoTipo.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            txtCostoTipo.Location = new System.Drawing.Point(260, 280);
-            txtCostoTipo.Margin = new System.Windows.Forms.Padding(2);
-            txtCostoTipo.MaxLength = 30;
-            txtCostoTipo.Name = "txtCostoTipo";
-            txtCostoTipo.Size = new System.Drawing.Size(413, 23);
-            txtCostoTipo.TabIndex = 48;
+            txtCedEmp.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            txtCedEmp.Location = new System.Drawing.Point(302, 124);
+            txtCedEmp.Margin = new System.Windows.Forms.Padding(2);
+            txtCedEmp.MaxLength = 30;
+            txtCedEmp.Name = "txtCedEmp";
+            txtCedEmp.Size = new System.Drawing.Size(371, 23);
+            txtCedEmp.TabIndex = 23;
+            // 
+            // label4
+            // 
+            label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            label4.AutoSize = true;
+            label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            label4.ForeColor = System.Drawing.Color.FromArgb(235, 42, 83);
+            label4.Location = new System.Drawing.Point(25, 177);
+            label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            label4.Name = "label4";
+            label4.Size = new System.Drawing.Size(200, 25);
+            label4.TabIndex = 24;
+            label4.Text = "Detalles de la Factura";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            label5.ForeColor = System.Drawing.Color.LightGray;
+            label5.Location = new System.Drawing.Point(382, 417);
+            label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            label5.Name = "label5";
+            label5.Size = new System.Drawing.Size(131, 17);
+            label5.TabIndex = 25;
+            label5.Text = "Total de la Factura:";
+            // 
+            // txtTotal
+            // 
+            txtTotal.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            txtTotal.Location = new System.Drawing.Point(517, 411);
+            txtTotal.Margin = new System.Windows.Forms.Padding(2);
+            txtTotal.MaxLength = 30;
+            txtTotal.Name = "txtTotal";
+            txtTotal.Size = new System.Drawing.Size(156, 23);
+            txtTotal.TabIndex = 26;
+            // 
+            // button1
+            // 
+            button1.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right;
+            button1.BackColor = System.Drawing.Color.FromArgb(235, 42, 83);
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            button1.ForeColor = System.Drawing.Color.LightGray;
+            button1.Location = new System.Drawing.Point(25, 476);
+            button1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            button1.Name = "button1";
+            button1.Size = new System.Drawing.Size(132, 46);
+            button1.TabIndex = 27;
+            button1.Text = "Añadir Detalle";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
+            // 
+            // button2
+            // 
+            button2.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right;
+            button2.BackColor = System.Drawing.Color.FromArgb(235, 42, 83);
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            button2.ForeColor = System.Drawing.Color.LightGray;
+            button2.Location = new System.Drawing.Point(276, 476);
+            button2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            button2.Name = "button2";
+            button2.Size = new System.Drawing.Size(132, 46);
+            button2.TabIndex = 28;
+            button2.Text = "Eliminar Detalle";
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // RegistrarTipoExamen
             // 
@@ -136,10 +221,16 @@
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.FromArgb(32, 30, 45);
             ClientSize = new System.Drawing.Size(700, 600);
+            Controls.Add(button2);
+            Controls.Add(button1);
+            Controls.Add(txtTotal);
+            Controls.Add(label5);
+            Controls.Add(label4);
+            Controls.Add(txtCedEmp);
             Controls.Add(label3);
-            Controls.Add(txtCostoTipo);
+            Controls.Add(dataGridView1);
             Controls.Add(label2);
-            Controls.Add(txtNomTipo);
+            Controls.Add(txtCedCli);
             Controls.Add(button9);
             Controls.Add(btnExit);
             Controls.Add(label1);
@@ -148,6 +239,7 @@
             Name = "RegistrarTipoExamen";
             Text = "Form3";
             Load += RegistrarTipoExamen_Load;
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -156,9 +248,15 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.TextBox txtNomTipo;
+        private System.Windows.Forms.TextBox txtCedCli;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtCostoTipo;
+        private System.Windows.Forms.TextBox txtCedEmp;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtTotal;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }

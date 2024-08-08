@@ -125,6 +125,11 @@ namespace PlayerUI.Pedidos
             {
                 // Get the selected row
                 DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
+                if (Convert.ToString(selectedRow.Cells["nombre"].Value).Equals(""))
+                {
+                    MessageBox.Show("Fila no válida", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
                 // Extract the necessary data from the selected row
                 int idProducto = Convert.ToInt32(selectedRow.Cells["id_producto"].Value);
                 string nombre = Convert.ToString(selectedRow.Cells["nombre"].Value);
@@ -134,11 +139,7 @@ namespace PlayerUI.Pedidos
                 stockValue = selectedRow.Cells["stock_sucursalG"].Value;
                 int stockGuayaquil = (stockValue == DBNull.Value) ? 0 : Convert.ToInt32(stockValue);
                 // Create an instance of the class using the extracted data
-                if (nombre.Equals(""))
-                {
-                    MessageBox.Show("Fila no válida", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
+                
                 Producto producto = new Producto(idProducto, nombre, (float)precio, stockGuayaquil);
 
 

@@ -172,7 +172,7 @@ namespace DataAccess
                 using (var command = new SqlCommand())
                 {
                     command.Connection = connection;
-                    command.CommandText = "INSERT into Productos_2 values (@id = id, @stock = stock)";
+                    command.CommandText = "INSERT into Productos_2 values (@id, @stock)";
                     command.Parameters.AddWithValue("@stock", stock);
                     command.Parameters.AddWithValue("@id", id);
                     int filasAfectadas = command.ExecuteNonQuery();
